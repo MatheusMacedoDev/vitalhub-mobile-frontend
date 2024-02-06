@@ -4,9 +4,31 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StackNavigationScreen from './src/screens/StackNavigationScreen/StackNavigationScreen';
 import LoginScreen from './src/screens/LoginScreen/LoginScreen';
 
+import { 
+  MontserratAlternates_500Medium,
+  MontserratAlternates_600SemiBold, 
+  MontserratAlternates_700Bold, 
+  useFonts
+} from '@expo-google-fonts/montserrat-alternates';
+
+import {
+  Quicksand_400Regular,
+  Quicksand_500Medium,
+  Quicksand_600SemiBold
+} from '@expo-google-fonts/quicksand'
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  useFonts({
+    MontserratAlternates_500Medium,
+    MontserratAlternates_600SemiBold,
+    MontserratAlternates_700Bold,
+    Quicksand_400Regular,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold
+  })
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
