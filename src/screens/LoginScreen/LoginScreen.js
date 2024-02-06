@@ -2,8 +2,8 @@ import React from 'react'
 import { Container } from '../../components/Container/style'
 import Logo from '../../components/Logo'
 import { Title } from '../../components/Title/style'
-import BasicInput from '../../components/BasicInput'
-import { BasicInputWrapper } from '../../components/BasicInput/style'
+import { BasicInput, BasicInputWrapper } from '../../components/BasicInput/style'
+import UnsignedLink from '../../components/UnsignedLink'
 
 export default function LoginScreen() {
   return (
@@ -14,10 +14,11 @@ export default function LoginScreen() {
       </Title>
       <BasicInputWrapper>
         <BasicInput 
-          placeholderText='Usuário ou E-mail'
+          placeholder='Usuário ou E-mail'
         />
         <BasicInput
-          placeholderText='Senha'
+          placeholder='Senha'
+          secureTextEntry
         />
       </BasicInputWrapper>
     </Container>
