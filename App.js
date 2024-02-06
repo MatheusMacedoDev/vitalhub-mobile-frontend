@@ -16,6 +16,7 @@ import {
   Quicksand_500Medium,
   Quicksand_600SemiBold
 } from '@expo-google-fonts/quicksand'
+import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,11 @@ export default function App() {
           name='login'
           component={ LoginScreen }
           options={{ title: 'Login' }}
+        />
+        <Stack.Screen 
+          name='splashScreen'
+          component={ SplashScreen }
+          options={{ title: 'Splash Screen' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
