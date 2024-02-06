@@ -21,6 +21,13 @@ export default function LoginScreen() {
           secureTextEntry
         />
       </BasicInputWrapper>
+      <UnsignedLink 
+        linkText='Esqueceu sua senha?'
+      />
+      <UnsignedLink 
+        additionalText='Não tem conta?'
+        linkText='Crie uma conta agora!'
+      />
     </Container>
   )
 }
