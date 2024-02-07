@@ -24,6 +24,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Create Account'
                 onPress={() => navigation.navigate('createAccount')}
             />
+            <Button 
+                title='Email Code'
+                onPress={() => navigation.navigate('emailCode')}
+            />
         </View>
     )
 }

@@ -7,3 +7,7 @@ export const CommandText = styled.Text`
     text-align: center;
     margin-bottom: 10%;
 `;
+
+export const CommandTextHighlight = styled(CommandText)`
+    color: #496BBA;
+`;

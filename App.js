@@ -20,6 +20,7 @@ import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen';
 import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen';
 import CreateAccountScreen from './src/screens/CreateAccountScreen';
+import EmailCodeScreen from './src/screens/EmailCodeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +66,11 @@ export default function App() {
           name='createAccount'
           component={ CreateAccountScreen }
           options={{ title: 'Create Account' }}
+        />
+        <Stack.Screen 
+          name='emailCode'
+          component={ EmailCodeScreen }
+          options={{ title: 'Email Code' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
