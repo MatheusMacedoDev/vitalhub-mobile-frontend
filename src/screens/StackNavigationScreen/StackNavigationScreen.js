@@ -12,6 +12,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Splash'
                 onPress={() => navigation.navigate("splashScreen")}
             />
+            <Button
+                title='RecoverPassword'
+                onPress={() => navigation.navigate("recoverPassword")}
+            />
         </View>
     )
 }

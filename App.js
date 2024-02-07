@@ -17,6 +17,7 @@ import {
   Quicksand_600SemiBold
 } from '@expo-google-fonts/quicksand'
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
+import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,11 @@ export default function App() {
           name='splashScreen'
           component={ SplashScreen }
           options={{ title: 'Splash Screen' }}
+        />
+        <Stack.Screen 
+          name='recoverPassword'
+          component={ RecoverPasswordScreen }
+          options={{ title: 'Recover Password' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
