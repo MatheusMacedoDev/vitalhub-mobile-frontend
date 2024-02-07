@@ -19,6 +19,7 @@ import {
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen';
 import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen';
+import CreateAccountScreen from './src/screens/CreateAccountScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,11 @@ export default function App() {
           name='redefinePassword'
           component={ RedefinePasswordScreen }
           options={{ title: 'Redefine Password' }}
+        />
+        <Stack.Screen 
+          name='createAccount'
+          component={ CreateAccountScreen }
+          options={{ title: 'Create Account' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

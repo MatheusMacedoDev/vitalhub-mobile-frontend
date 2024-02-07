@@ -20,6 +20,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Redefine Password'
                 onPress={() => navigation.navigate('redefinePassword')}
             />
+            <Button 
+                title='Create Account'
+                onPress={() => navigation.navigate('createAccount')}
+            />
         </View>
     )
 }
