@@ -4,6 +4,8 @@ import Logo from '../../components/Logo'
 import { Title } from '../../components/Title/style'
 import { BasicInput, BasicInputWrapper } from '../../components/BasicInput/style'
 import UnsignedLink from '../../components/UnsignedLink'
+import UnsignedButton from '../../components/UnsignedButton'
+import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 
 export default function LoginScreen() {
   return (
@@ -23,7 +25,17 @@ export default function LoginScreen() {
       </BasicInputWrapper>
       <UnsignedLink 
         linkText='Esqueceu sua senha?'
+        isGreyLink={true}
       />
+      <UnsignedButtonsWrapper>
+        <UnsignedButton 
+          buttonText='Entrar'
+        />
+        <UnsignedButton 
+          buttonText='Entrar com o Google'
+          isGoogleButton={true}
+        />
+      </UnsignedButtonsWrapper>
       <UnsignedLink 
         additionalText='Não tem conta?'
         linkText='Crie uma conta agora!'

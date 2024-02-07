@@ -7,8 +7,8 @@ export default function UnsignedLink({ additionalText, linkText, isGreyLink = fa
     <LinkWrapper>
       <LinkText>{ additionalText }</LinkText>
       {isGreyLink 
-        ? <BlueLink>{ linkText }</BlueLink>
-        : <GreyLink>{ linkText }</GreyLink>}
+        ? <GreyLink>{ linkText }</GreyLink>
+        : <BlueLink>{ linkText }</BlueLink>}
     </LinkWrapper>
   )
 }
