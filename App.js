@@ -18,6 +18,7 @@ import {
 } from '@expo-google-fonts/quicksand'
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen';
+import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,6 +54,11 @@ export default function App() {
           name='recoverPassword'
           component={ RecoverPasswordScreen }
           options={{ title: 'Recover Password' }}
+        />
+        <Stack.Screen
+          name='redefinePassword'
+          component={ RedefinePasswordScreen }
+          options={{ title: 'Redefine Password' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
