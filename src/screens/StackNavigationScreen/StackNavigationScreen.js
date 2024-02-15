@@ -32,6 +32,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Insert Medical Record'
                 onPress={() => navigation.navigate('insertMedicalRecord')}
             />
+            <Button
+                title='Patient Profile'
+                onPress={() => navigation.navigate('patientProfile')}
+            />
         </View>
     )
 }

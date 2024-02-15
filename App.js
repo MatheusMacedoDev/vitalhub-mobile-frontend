@@ -23,6 +23,7 @@ import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen';
 import CreateAccountScreen from './src/screens/CreateAccountScreen';
 import EmailCodeScreen from './src/screens/EmailCodeScreen';
 import InsertMedicalRecordScreen from './src/screens/InsertMedicalRecordScreen';
+import PatientProfileScreen from './src/screens/PatientProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -78,6 +79,11 @@ export default function App() {
                     name='insertMedicalRecord'
                     component={InsertMedicalRecordScreen}
                     options={{ title: 'InsertMedicalRecord' }}
+                />
+                <Stack.Screen
+                    name='patientProfile'
+                    component={PatientProfileScreen}
+                    options={{ title: 'PatientProfile' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
