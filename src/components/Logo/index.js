@@ -3,9 +3,9 @@ import React from 'react'
 import { LogoImage } from './style'
 
 export default function Logo() {
-  return (
-    <LogoImage 
-      source={require('../../assets/vitalhub-logo.png')}
-    />
-  )
+    return (
+        <LogoImage
+            source={require('../../assets/vitalhub-logo.png')}
+        />
+    )
 }

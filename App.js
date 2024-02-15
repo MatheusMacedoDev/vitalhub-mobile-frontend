@@ -4,75 +4,82 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StackNavigationScreen from './src/screens/StackNavigationScreen/StackNavigationScreen';
 import LoginScreen from './src/screens/LoginScreen/LoginScreen';
 
-import { 
-  MontserratAlternates_500Medium,
-  MontserratAlternates_600SemiBold, 
-  MontserratAlternates_700Bold, 
-  useFonts
+import {
+    MontserratAlternates_500Medium,
+    MontserratAlternates_600SemiBold,
+    MontserratAlternates_700Bold,
+    useFonts
 } from '@expo-google-fonts/montserrat-alternates';
 
 import {
-  Quicksand_400Regular,
-  Quicksand_500Medium,
-  Quicksand_600SemiBold
+    Quicksand_400Regular,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold
 } from '@expo-google-fonts/quicksand'
+
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen';
 import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen';
 import CreateAccountScreen from './src/screens/CreateAccountScreen';
 import EmailCodeScreen from './src/screens/EmailCodeScreen';
+import InsertMedicalRecordScreen from './src/screens/InsertMedicalRecordScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  useFonts({
-    MontserratAlternates_500Medium,
-    MontserratAlternates_600SemiBold,
-    MontserratAlternates_700Bold,
-    Quicksand_400Regular,
-    Quicksand_500Medium,
-    Quicksand_600SemiBold
-  })
+    useFonts({
+        MontserratAlternates_500Medium,
+        MontserratAlternates_600SemiBold,
+        MontserratAlternates_700Bold,
+        Quicksand_400Regular,
+        Quicksand_500Medium,
+        Quicksand_600SemiBold
+    })
 
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name='navigation'
-          component={ StackNavigationScreen }
-          options={{ title: 'Navigation' }}
-        />
-        <Stack.Screen
-          name='login'
-          component={ LoginScreen }
-          options={{ title: 'Login' }}
-        />
-        <Stack.Screen 
-          name='splashScreen'
-          component={ SplashScreen }
-          options={{ title: 'Splash Screen' }}
-        />
-        <Stack.Screen 
-          name='recoverPassword'
-          component={ RecoverPasswordScreen }
-          options={{ title: 'Recover Password' }}
-        />
-        <Stack.Screen
-          name='redefinePassword'
-          component={ RedefinePasswordScreen }
-          options={{ title: 'Redefine Password' }}
-        />
-        <Stack.Screen 
-          name='createAccount'
-          component={ CreateAccountScreen }
-          options={{ title: 'Create Account' }}
-        />
-        <Stack.Screen 
-          name='emailCode'
-          component={ EmailCodeScreen }
-          options={{ title: 'Email Code' }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='navigation'
+                    component={StackNavigationScreen}
+                    options={{ title: 'Navigation' }}
+                />
+                <Stack.Screen
+                    name='login'
+                    component={LoginScreen}
+                    options={{ title: 'Login' }}
+                />
+                <Stack.Screen
+                    name='splashScreen'
+                    component={SplashScreen}
+                    options={{ title: 'Splash Screen' }}
+                />
+                <Stack.Screen
+                    name='recoverPassword'
+                    component={RecoverPasswordScreen}
+                    options={{ title: 'Recover Password' }}
+                />
+                <Stack.Screen
+                    name='redefinePassword'
+                    component={RedefinePasswordScreen}
+                    options={{ title: 'Redefine Password' }}
+                />
+                <Stack.Screen
+                    name='createAccount'
+                    component={CreateAccountScreen}
+                    options={{ title: 'Create Account' }}
+                />
+                <Stack.Screen
+                    name='emailCode'
+                    component={EmailCodeScreen}
+                    options={{ title: 'Email Code' }}
+                />
+                <Stack.Screen
+                    name='insertMedicalRecord'
+                    component={InsertMedicalRecordScreen}
+                    options={{ title: 'InsertMedicalRecord' }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }

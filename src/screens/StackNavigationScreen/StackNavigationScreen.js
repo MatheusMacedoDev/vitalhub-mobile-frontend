@@ -4,7 +4,7 @@ import React from 'react'
 export default function StackNavigationScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 20 }}>
-            <Button 
+            <Button
                 title='Login'
                 onPress={() => navigation.navigate("login")}
             />
@@ -16,17 +16,21 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Recover Password'
                 onPress={() => navigation.navigate("recoverPassword")}
             />
-            <Button 
+            <Button
                 title='Redefine Password'
                 onPress={() => navigation.navigate('redefinePassword')}
             />
-            <Button 
+            <Button
                 title='Create Account'
                 onPress={() => navigation.navigate('createAccount')}
             />
-            <Button 
+            <Button
                 title='Email Code'
                 onPress={() => navigation.navigate('emailCode')}
+            />
+            <Button
+                title='Insert Medical Record'
+                onPress={() => navigation.navigate('insertMedicalRecord')}
             />
         </View>
     )
