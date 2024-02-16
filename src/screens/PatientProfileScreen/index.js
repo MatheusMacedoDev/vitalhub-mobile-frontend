@@ -24,19 +24,24 @@ export default function PatientProfileScreen() {
           />
           <InternalInputsWrapper>
             <InternalTextArea 
-                inputText="Descrição da consulta"
-                textArea="O paciente possuí uma infecção no ouvido. Necessário repouse de 2 dias e acompanhamento médico constante"
+                inputText="Data de nascimento:"
+                textArea="04/05/1999"
             />
             <InternalTextArea 
-                inputText="Descrição da consulta"
-                textArea="Infecção no ouvido"
+                inputText="CPF"
+                textArea="859********"
             />
             <InternalTextArea 
-                inputText="Prescrição médica"
-                textArea="Medicamento: Advil
-                            Dosagem: 50 mg
-                            Frequência: 3 vezes ao dia
-                            Duração: 3 dias"
+                inputText="Endereço"
+                textArea="Rua Vicenso Silva, 987"
+            />
+            <InternalTextArea 
+                inputText="Cep"
+                textArea="06548-909"
+            />
+            <InternalTextArea 
+                inputText="Cidade"
+                textArea="Moema-SP"
             />
           </InternalInputsWrapper>
           <UnsignedButtonsWrapper>
@@ -47,9 +52,6 @@ export default function PatientProfileScreen() {
                   buttonText='Editar'
               />
           </UnsignedButtonsWrapper>
-          <UnsignedLink 
-              linkText='Cancelar' 
-          />
       </Container>
     </>
   )
