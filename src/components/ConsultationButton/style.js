@@ -1,10 +1,12 @@
 import styled from 'styled-components/native';
 
 export const BarButton = styled.TouchableOpacity`
-    width: 100px;
-    height: 32px;
+    width: 120px;
+    height: 45px;
     border-radius: 10px;
     border: 2px solid #496BBA;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const BarButtonText = styled.Text`

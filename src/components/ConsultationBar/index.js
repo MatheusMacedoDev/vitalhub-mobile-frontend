@@ -2,20 +2,27 @@ import React from 'react'
 import { BarContainer } from './style'
 import ConsultationButton from '../ConsultationButton'
 
-export default function ConsultationBar() {
+export default function ConsultationBar({ selectedType = 0, changeSelectedType = null }) {
     return (
         <BarContainer>
             <ConsultationButton 
                 text='Agendadas'
-                isHighlighted={true}
+                buttonTypeState={0}
+                currentTypeState={selectedType}
+                changeButtonState={changeSelectedType}
+                
             />
-            <ConsultationBar 
+            <ConsultationButton 
                 text='Realizadas'
-                isHighlighted={false}
+                buttonTypeState={1}
+                currentTypeState={selectedType}
+                changeButtonState={changeSelectedType}
             />
-            <ConsultationBar 
+            <ConsultationButton 
                 text='Canceladas'
-                isHighlighted={false}
+                buttonTypeState={2}
+                currentTypeState={selectedType}
+                changeButtonState={changeSelectedType}
             />
         </BarContainer>
     )

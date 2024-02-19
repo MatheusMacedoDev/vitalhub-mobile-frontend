@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BarButton, BarButtonText, HighlightedBarButton, HighlightedBarButtonText } from './style'
 
-export default function ConsultationButton({ text, isHighlighted }) {
-    if (isHighlighted) {
+export default function ConsultationButton({ buttonTypeState, currentTypeState, text = '', changeButtonState = null }) {
+    if (buttonTypeState == currentTypeState) {
         return (
             <HighlightedBarButton>
                 <HighlightedBarButtonText>{ text }</HighlightedBarButtonText>
@@ -11,7 +11,7 @@ export default function ConsultationButton({ text, isHighlighted }) {
     }
 
     return (
-        <BarButton>
+        <BarButton onPress={ () => changeButtonState(buttonTypeState) }>
             <BarButtonText>{ text }</BarButtonText>
         </BarButton>
     )
