@@ -6,6 +6,7 @@ import ConsultationBar from '../../components/ConsultationBar'
 import { Container } from '../../components/Container/style';
 import ConsultationCard from '../../components/ConsultationCard'
 import { ConsultationCarList } from '../../components/ConsultationCardList/style'
+import CancelConsultationModal from '../../components/CancelConsultationModal'
 
 export default function DoctorConsultScreen() {
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
@@ -81,28 +82,31 @@ export default function DoctorConsultScreen() {
   }, [selectedConsultationType]);
 
   return (
-    <ScreenContainer>
-        <HomeHeader />
-        <Calendar />
-        <Container>
-          <ConsultationBar
-            selectedType={ selectedConsultationType }
-            changeSelectedType={ setSelectedConsultationType }
-          />
-          <ConsultationCarList 
-            data={selectedConsultationData}
-            contentContainerStyle={{ gap: 12 }}
-            renderItem={({ item }) => 
-              <ConsultationCard 
-                patientName={item.patientName}
-                patientAge={item.patientAge}
-                consultationType={item.consultationType}
-                consultationTime={item.consultationTime}
-                cardType={item.consultationStatus}
-              />
-            }
-          />
-        </Container>
-    </ScreenContainer>
+    <>
+      <CancelConsultationModal />
+      <ScreenContainer>
+          <HomeHeader />
+          <Calendar />
+          <Container>
+            <ConsultationBar
+              selectedType={ selectedConsultationType }
+              changeSelectedType={ setSelectedConsultationType }
+            />
+            <ConsultationCarList 
+              data={selectedConsultationData}
+              contentContainerStyle={{ gap: 12 }}
+              renderItem={({ item }) => 
+                <ConsultationCard 
+                  patientName={item.patientName}
+                  patientAge={item.patientAge}
+                  consultationType={item.consultationType}
+                  consultationTime={item.consultationTime}
+                  cardType={item.consultationStatus}
+                />
+              }
+            />
+          </Container>
+      </ScreenContainer>
+    </>
   )
 }

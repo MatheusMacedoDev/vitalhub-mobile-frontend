@@ -4,5 +4,5 @@ export const Title = styled.Text`
     font-size: 20px;
     font-family: 'MontserratAlternates_600SemiBold';
     color: #33303E;
-    margin: 20px 0;
+    margin: ${props => props.$marginTop || 20}px 0;
 `;
