@@ -9,6 +9,7 @@ export const CardContainer = styled.View`
     border-radius: 10px;
     box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
     elevation: 10;
+    position: relative;
 `;
 
 export const CardImage = styled.Image`
@@ -69,7 +70,9 @@ export const GreyTimeText = styled(TimeText)`
 
 export const CancelationLink = styled.Text`
     color: #C81D25;
-    align-self: flex-end;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
 `;
 
 export const MedicalRecordLink = styled(CancelationLink)`
