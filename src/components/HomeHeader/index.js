@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Header, NameText, UserContainer, UserImage, UserInfoContainer, WelcomeText } from './style'
+import React from 'react';
+import { Header, NameText, UserContainer, UserImage, UserInfoContainer, WelcomeText } from './style';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeHeader() {
   return (
@@ -18,6 +18,7 @@ export default function HomeHeader() {
                 <NameText>Dr. Claudio</NameText>
             </UserInfoContainer>
         </UserContainer>
+        <Ionicons name="notifications" size={28} color="#fff" />
     </Header>
   )
 }

@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import HomeHeader from '../../components/HomeHeader'
 import { ScreenContainer } from '../../components/ScreenContainer/style'
@@ -92,6 +91,7 @@ export default function DoctorConsultScreen() {
           />
           <ConsultationCarList 
             data={selectedConsultationData}
+            contentContainerStyle={{ gap: 12 }}
             renderItem={({ item }) => 
               <ConsultationCard 
                 patientName={item.patientName}

@@ -6,6 +6,9 @@ export const Header = styled(LinearGradient)`
     height: 15%;
     border-radius: 0 0 15px 15px;
     padding: 22px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 export const UserContainer = styled.View`
