@@ -3,7 +3,7 @@ import React from 'react'
 import { CancelationLink, CardContainer, CardImage, CardInfoContainer, ConsultationTypeText, GreyTimeContainer, GreyTimeText, MedicalRecordLink, PatientAgeText, PatientNameText, SubtitleInfoWrapper, TimeContainer, TimeText } from './style';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 
-export default function ConsultationCard({ patientName, patientAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null }) {
+export default function ConsultationCard({ patientName, patientAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null }) {
   return (
     <CardContainer>
         <CardImage 
@@ -30,7 +30,7 @@ export default function ConsultationCard({ patientName, patientAge, consultation
         </CardInfoContainer>
 
         { cardType == 'performed' ? (
-            <MedicalRecordLink>Ver prontuário</MedicalRecordLink>
+            <MedicalRecordLink onPress={activeInserMedicalRecordModalFn}>Ver prontuário</MedicalRecordLink>
         ) : null}
 
         { cardType == 'scheduled' ? (
