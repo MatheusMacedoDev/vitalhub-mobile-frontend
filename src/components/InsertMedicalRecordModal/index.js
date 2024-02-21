@@ -9,8 +9,8 @@ export default function InsertMedicalRecordModal({
     active, 
     disableModalFn = null,
     userData = {
-        userName: 'User Name',
-        userAge: 'X anos',
+        userName: 'user name',
+        userAge: 'x anos',
         userEmail: 'useremail@email.com'
     }  
 }) {

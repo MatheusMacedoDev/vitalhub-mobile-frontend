@@ -11,7 +11,9 @@ import InsertMedicalRecordModal from '../../components/InsertMedicalRecordModal'
 
 export default function DoctorConsultScreen() {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
+
   const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
+  const [selectedUserData, setSelectedUserData] = useState({})
 
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
@@ -19,6 +21,7 @@ export default function DoctorConsultScreen() {
     {
       consultationId: 1,
       patientName: 'Niccole Sarga',
+      patientEmail: 'niccole.sarga@email.com',
       patientAge: '22 anos',
       consultationType: 'Rotina',
       consultationTime: '14:00',
@@ -27,6 +30,7 @@ export default function DoctorConsultScreen() {
     {
       consultationId: 2,
       patientName: 'Richard Kosta',
+      patientEmail: 'richard.kosta@email.com',
       patientAge: '28 anos',
       consultationType: 'Urgência',
       consultationTime: '15:00',
@@ -35,6 +39,7 @@ export default function DoctorConsultScreen() {
     {
       consultationId: 3,
       patientName: 'Elisa',
+      patientEmail: 'elisa@email.com',
       patientAge: '22 anos',
       consultationType: 'Rotina',
       consultationTime: '16:00',
@@ -43,6 +48,7 @@ export default function DoctorConsultScreen() {
     {
       consultationId: 4,
       patientName: 'Elisangela',
+      patientEmail: 'elisangela@email.com',
       patientAge: '28 anos',
       consultationType: 'Urgência',
       consultationTime: '15:00',
@@ -51,6 +57,7 @@ export default function DoctorConsultScreen() {
     {
       consultationId: 5,
       patientName: 'Sandra',
+      patientEmail: 'sandra@email.com',
       patientAge: '28 anos',
       consultationType: 'Urgência',
       consultationTime: '15:00',
@@ -87,8 +94,15 @@ export default function DoctorConsultScreen() {
 
   return (
     <>
-      <CancelConsultationModal active={isCancelConsultationModalActive} disableModalFn={() => setIsCancelConsultationModalActive(false)} />
-      <InsertMedicalRecordModal active={isInsertMedicalRecordModalActive} disableModalFn={() => setIsInsertMedicalRecordModalActive(false)} />
+      <CancelConsultationModal 
+        active={isCancelConsultationModalActive} 
+        disableModalFn={() => setIsCancelConsultationModalActive(false)}
+      />
+      <InsertMedicalRecordModal 
+        active={isInsertMedicalRecordModalActive} 
+        disableModalFn={() => setIsInsertMedicalRecordModalActive(false)} 
+        userData={selectedUserData}
+      />
       <ScreenContainer>
           <HomeHeader />
           <Calendar />
@@ -100,15 +114,18 @@ export default function DoctorConsultScreen() {
             <ConsultationCarList 
               data={selectedConsultationData}
               contentContainerStyle={{ gap: 12 }}
+              keyExtractor={item => item.consultationId}
               renderItem={({ item }) => 
                 <ConsultationCard 
                   patientName={item.patientName}
                   patientAge={item.patientAge}
+                  patientEmail={item.patientEmail}
                   consultationType={item.consultationType}
                   consultationTime={item.consultationTime}
                   cardType={item.consultationStatus}
                   activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
                   activeInserMedicalRecordModalFn={() => setIsInsertMedicalRecordModalActive(true)}
+                  setCurrentUserDataFn={setSelectedUserData}
                 />
               }
             />
