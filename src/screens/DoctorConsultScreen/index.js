@@ -9,6 +9,8 @@ import { ConsultationCarList } from '../../components/ConsultationCardList/style
 import CancelConsultationModal from '../../components/CancelConsultationModal'
 
 export default function DoctorConsultScreen() {
+  const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
+
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
   const [consultationsData, setConsultationData] = useState([
@@ -83,7 +85,7 @@ export default function DoctorConsultScreen() {
 
   return (
     <>
-      <CancelConsultationModal />
+      <CancelConsultationModal active={isCancelConsultationModalActive} disableModalFn={() => setIsCancelConsultationModalActive(false)} />
       <ScreenContainer>
           <HomeHeader />
           <Calendar />
@@ -102,6 +104,7 @@ export default function DoctorConsultScreen() {
                   consultationType={item.consultationType}
                   consultationTime={item.consultationTime}
                   cardType={item.consultationStatus}
+                  activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
                 />
               }
             />

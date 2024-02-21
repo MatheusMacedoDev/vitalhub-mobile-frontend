@@ -5,7 +5,7 @@ import { CommandText } from '../CommandText/style';
 import UnsignedButton from '../UnsignedButton';
 import UnsignedLink from '../UnsignedLink'
 
-export default function CancelConsultationModal({ active = false }) {
+export default function CancelConsultationModal({ active, disableModalFn = null }) {
   return (
     <BlackBox active={active}>
         <ModalContainer active={active}>
@@ -15,6 +15,7 @@ export default function CancelConsultationModal({ active = false }) {
               buttonText='Confirmar'
             />
             <UnsignedLink 
+              handleClickFn={disableModalFn}
               linkText='Cancelar'
             />
         </ModalContainer>
