@@ -40,6 +40,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='Doctor Consult'
                 onPress={() => navigation.navigate('doctorConsult')}
             />
+            <Button
+                title='Patient Consult'
+                onPress={() => navigation.navigate('patientConsult')}
+            />
         </View>
     )
 }

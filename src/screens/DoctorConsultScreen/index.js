@@ -65,11 +65,12 @@ export default function DoctorConsultScreen() {
     },
   ]);
 
-  const isScheduledConsultation = consultation => consultation.consultationStatus == 'scheduled';
-  const isPerformedConsultation = consultation => consultation.consultationStatus == 'performed';
-  const isCanceledConsultation = consultation => consultation.consultationStatus == 'canceled';
-
+  
   function filterConsultationsByStatus() {
+    const isScheduledConsultation = consultation => consultation.consultationStatus == 'scheduled';
+    const isPerformedConsultation = consultation => consultation.consultationStatus == 'performed';
+    const isCanceledConsultation = consultation => consultation.consultationStatus == 'canceled';
+
     switch(selectedConsultationType) {
       case 0:
         const scheduledConsultations = consultationsData.filter(isScheduledConsultation);
@@ -104,7 +105,7 @@ export default function DoctorConsultScreen() {
         userData={selectedUserData}
       />
       <ScreenContainer>
-          <HomeHeader />
+          <HomeHeader userName='Dr. Lucas' userImageUri='https://avatars.githubusercontent.com/u/125275518?v=4' />
           <Calendar />
           <Container>
             <ConsultationBar
@@ -117,9 +118,9 @@ export default function DoctorConsultScreen() {
               keyExtractor={item => item.consultationId}
               renderItem={({ item }) => 
                 <ConsultationCard 
-                  patientName={item.patientName}
-                  patientAge={item.patientAge}
-                  patientEmail={item.patientEmail}
+                  userName={item.patientName}
+                  userAge={item.patientAge}
+                  userEmail={item.patientEmail}
                   consultationType={item.consultationType}
                   consultationTime={item.consultationTime}
                   cardType={item.consultationStatus}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, NameText, UserContainer, UserImage, UserInfoContainer, WelcomeText } from './style';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function HomeHeader() {
+export default function HomeHeader({ userName, userImageUri}) {
   return (
     <Header
         colors={['#60BFC5', '#496BBA']}
@@ -11,11 +11,11 @@ export default function HomeHeader() {
     >
         <UserContainer>
             <UserImage 
-                source={require('../../assets/doctor-image.png')}
+                source={{ uri: userImageUri }}
             />
             <UserInfoContainer>
                 <WelcomeText>Bem vindo</WelcomeText>
-                <NameText>Dr. Claudio</NameText>
+                <NameText>{ userName }</NameText>
             </UserInfoContainer>
         </UserContainer>
         <Ionicons name="notifications" size={28} color="#fff" />

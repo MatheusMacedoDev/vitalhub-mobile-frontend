@@ -3,16 +3,16 @@ import React from 'react'
 import { CancelationLink, CardContainer, CardImage, CardInfoContainer, ConsultationTypeText, GreyTimeContainer, GreyTimeText, MedicalRecordLink, PatientAgeText, PatientNameText, SubtitleInfoWrapper, TimeContainer, TimeText } from './style';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 
-export default function ConsultationCard({ patientName, patientEmail, patientAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null, setCurrentUserDataFn = null }) {
+export default function ConsultationCard({ userName, userEmail, userAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null, setCurrentUserDataFn = null }) {
   return (
     <CardContainer>
         <CardImage 
             source={require('../../assets/patient-image.png')}
         />
         <CardInfoContainer>
-            <PatientNameText>{ patientName }</PatientNameText>
+            <PatientNameText>{ userName }</PatientNameText>
             <SubtitleInfoWrapper>
-                <PatientAgeText>{ patientAge }</PatientAgeText>
+                <PatientAgeText>{ userAge }</PatientAgeText>
                 <FontAwesome name="circle" size={5} color="#D9D9D9" />
                 <ConsultationTypeText>{ consultationType }</ConsultationTypeText>
             </SubtitleInfoWrapper>
@@ -33,9 +33,9 @@ export default function ConsultationCard({ patientName, patientEmail, patientAge
             <MedicalRecordLink onPress={() => {
                 activeInserMedicalRecordModalFn()
                 setCurrentUserDataFn({
-                    userName: patientName,
-                    userAge: patientAge,
-                    userEmail:patientEmail
+                    userName: userName,
+                    userAge: userAge,
+                    userEmail: userEmail
                 })
             }
             }>Ver prontuário</MedicalRecordLink>
