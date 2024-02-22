@@ -9,9 +9,12 @@ import ConsultationCard from '../../components/ConsultationCard';
 import CancelConsultationModal from '../../components/CancelConsultationModal';
 import { ScheduleConsultationButton } from './style';
 import { FontAwesome6 } from '@expo/vector-icons';
+import ScheduleConsultationModal from '../../components/ScheduleConsultationModal';
 
 export default function PatientConsultScreen() {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
+
+  const [isSchedulingConsultationActive, setIsSchedulingConsultationActive] = useState(false);
 
   const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
   const [selectedUserData, setSelectedUserData] = useState({})
@@ -63,6 +66,10 @@ export default function PatientConsultScreen() {
         active={isCancelConsultationModalActive} 
         disableModalFn={() => setIsCancelConsultationModalActive(false)}
       />
+      <ScheduleConsultationModal 
+        active={isSchedulingConsultationActive}
+        disableModalFn={() => setIsSchedulingConsultationActive(false)}
+      />
       <ScreenContainer>
           <HomeHeader userName='Richard Kosta' userImageUri='https://avatars.githubusercontent.com/u/125266412?v=4' />
           <Calendar />
@@ -89,7 +96,7 @@ export default function PatientConsultScreen() {
                   />
                 }
               />
-              <ScheduleConsultationButton>
+              <ScheduleConsultationButton onPress={() => setIsSchedulingConsultationActive(true)}>
                 <FontAwesome6 name="stethoscope" size={32} color="#FBFBFB" />
               </ScheduleConsultationButton>
           </Container>
