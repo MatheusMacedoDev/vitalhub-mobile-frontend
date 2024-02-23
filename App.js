@@ -27,6 +27,7 @@ import PatientProfileScreen from './src/screens/PatientProfileScreen';
 import DoctorConsultScreen from './src/screens/DoctorConsultScreen';
 import PatientConsultScreen from './src/screens/PatientConsultScreen';
 import ClinicSelectionScreen from './src/screens/ClinicSelectionScreen';
+import DoctorSelectionScreen from './src/screens/DoctorSelectionScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -102,6 +103,11 @@ export default function App() {
                     name='clinicSelection'
                     component={ClinicSelectionScreen}
                     options={{ title: 'ClinicSelection' }}
+                />
+                <Stack.Screen
+                    name='doctorSelection'
+                    component={DoctorSelectionScreen}
+                    options={{ title: 'DoctorSelection' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
