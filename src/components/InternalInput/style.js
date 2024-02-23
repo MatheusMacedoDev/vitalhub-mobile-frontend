@@ -12,14 +12,16 @@ export const InputContainer = styled.View`
 `;
 
 export const InputText = styled.Text`
-    font-size: 16px;
+    font-size: ${props => props.fontSize}px;
     font-family: 'Quicksand_600SemiBold';
 `;
 
-export const Input = styled.TextInput`
+export const Input = styled.TextInput.attrs({
+    placeholderTextColor: '#34898F'
+})`
     font-size: 14px;
     font-family: 'MontserratAlternates_600SemiBold';
     border: 2px solid #49B3BA;
     border-radius: 10px;
-    padding: 16px;
+    padding: 16px 16px 16px 22px;
 `;

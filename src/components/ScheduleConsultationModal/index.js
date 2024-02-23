@@ -7,6 +7,7 @@ import { ButtonText } from '../UnsignedButton/style'
 import UnsignedLink from '../UnsignedLink'
 import SelectInput from '../SelectInput'
 import ButtonSelectInput from '../ButtonSelectInput'
+import InternalInput from '../InternalInput'
 
 export default function ScheduleConsultationModal({ active = true, disableModalFn = null }) {
   const [consultationType, setConsultationType] = useState('');
@@ -23,13 +24,14 @@ export default function ScheduleConsultationModal({ active = true, disableModalF
         />
 
         <ButtonSelectInput 
-          data={[
-            { id: '0', value: 'Rotina' },
-            { id: '1', value: 'Exame' },
-            { id: '2', value: 'Urgência' }
-          ]}
           selectedButtonId={consultationLevel}
           handleChangeSelectedFn={setConsultationLevel}
+        />
+
+        <InternalInput 
+          inputText='Prescrição médica'
+          inputTextFontSize={14}
+          placeholder='Prescrição médica'
         />
 
         <UnsignedButton 

@@ -10,7 +10,7 @@ import InternalTextArea from "../../components/InternalTextArea";
 import { UserProfileImage } from "../../components/UserImage/style";
 
 export default function InsertMedicalRecordScreen() {
-    const [isEditing, setIsEditing] = useState(false);
+    const [isEditing, setIsEditing] = useState(true);
 
     return (
         <>
