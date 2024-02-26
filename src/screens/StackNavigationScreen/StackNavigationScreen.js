@@ -52,6 +52,10 @@ export default function StackNavigationScreen({ navigation }) {
                 title='DoctorSelection'
                 onPress={() => navigation.navigate('doctorSelection')}
             />
+            <Button
+                title='DateSelection'
+                onPress={() => navigation.navigate('dateSelection')}
+            />
         </View>
     )
 }
