@@ -5,7 +5,6 @@ import { Container } from '../../components/Container/style'
 import { InternalInputsWrapper } from '../../components/InternalInput/style'
 import InternalTextArea from '../../components/InternalTextArea'
 import UnsignedButton from '../../components/UnsignedButton'
-import UnsignedLink from '../../components/UnsignedLink'
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 
 export default function PatientProfileScreen() {

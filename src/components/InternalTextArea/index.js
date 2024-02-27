@@ -6,7 +6,7 @@ import { InputContainer, InputText } from '../InternalInput/style'
 export default function InternalTextArea({ inputText = 'Input', textArea = 'Text' }) {
     return (
         <InputContainer>
-            <InputText>{ inputText }</InputText>
+            <InputText fontSize={14}>{ inputText }</InputText>
             <TextArea>
                 { textArea }
             </TextArea>
