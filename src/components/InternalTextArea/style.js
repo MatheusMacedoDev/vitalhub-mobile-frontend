@@ -8,3 +8,9 @@ export const TextArea = styled.Text`
     color: #4E4B59;
     padding: 16px;
 `;
+
+export const SplitedTextAreasContainer = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+`;

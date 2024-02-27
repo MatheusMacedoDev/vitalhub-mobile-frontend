@@ -18,7 +18,13 @@ export const Subtitle = styled.Text`
     font-size: 16px;
     font-family: 'Quicksand_500Medium';
     text-align: center;
-`
+`;
+
+export const SecondSubtitle = styled.Text`
+    font-size: 14px;
+    font-family: 'Quicksand_600SemiBold';
+    text-align: center;
+`;
 
 export const SmallGroup = styled.View`
     gap: 8px;

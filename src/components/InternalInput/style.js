@@ -7,7 +7,7 @@ export const InternalInputsWrapper = styled.View`
 `;
 
 export const InputContainer = styled.View`
-    width: 100%;
+    width: ${props => props.widthPercentage ? props.widthPercentage : '100'}%;
     gap: 10px;
 `;
 
