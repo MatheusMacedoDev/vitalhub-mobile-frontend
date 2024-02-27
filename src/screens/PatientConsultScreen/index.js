@@ -10,6 +10,7 @@ import CancelConsultationModal from '../../components/CancelConsultationModal';
 import { ScheduleConsultationButton } from './style';
 import { FontAwesome6 } from '@expo/vector-icons';
 import ScheduleConsultationModal from '../../components/ScheduleConsultationModal';
+import ScheduleBriefModal from '../../components/ScheduleBriefModal';
 
 export default function PatientConsultScreen() {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
@@ -18,6 +19,8 @@ export default function PatientConsultScreen() {
 
   const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
   const [selectedUserData, setSelectedUserData] = useState({})
+
+  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(true);
 
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
@@ -69,6 +72,10 @@ export default function PatientConsultScreen() {
       <ScheduleConsultationModal 
         active={isSchedulingConsultationActive}
         disableModalFn={() => setIsSchedulingConsultationActive(false)}
+      />
+      <ScheduleBriefModal 
+        active={isScheduleBriefActive}
+        disableModalFn={() => setIsScheduleBriefActive(false)}
       />
       <ScreenContainer>
           <HomeHeader userName='Richard Kosta' userImageUri='https://avatars.githubusercontent.com/u/125266412?v=4' />
