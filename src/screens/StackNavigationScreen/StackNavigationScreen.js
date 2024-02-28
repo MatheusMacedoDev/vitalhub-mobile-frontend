@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function StackNavigationScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 10 }}>
             <Button
                 title='Login'
                 onPress={() => navigation.navigate("login")}
@@ -59,6 +59,10 @@ export default function StackNavigationScreen({ navigation }) {
             <Button
                 title='ConsultationLocation'
                 onPress={() => navigation.navigate('consultationLocation')}
+            />
+            <Button
+                title='PatientViewMedicalRecord'
+                onPress={() => navigation.navigate('patientViewMedicalRecord')}
             />
         </View>
     )

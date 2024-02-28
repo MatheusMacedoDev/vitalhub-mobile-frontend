@@ -11,6 +11,7 @@ import { ScheduleConsultationButton } from './style';
 import { FontAwesome6 } from '@expo/vector-icons';
 import ScheduleConsultationModal from '../../components/ScheduleConsultationModal';
 import ScheduleBriefModal from '../../components/ScheduleBriefModal';
+import ViewConsultationLocationModal from '../../components/ViewConsultationLocationModal';
 
 export default function PatientConsultScreen() {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
@@ -20,7 +21,9 @@ export default function PatientConsultScreen() {
   const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
   const [selectedUserData, setSelectedUserData] = useState({})
 
-  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(true);
+  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(false);
+
+  const [isViewConsultationLocationActive, setIsViewConstationLocationModal] = useState(false);
 
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
@@ -33,7 +36,16 @@ export default function PatientConsultScreen() {
       consultationType: 'Rotina',
       consultationTime: '14:00',
       consultationStatus: 'scheduled'
-    }
+    },
+    {
+      consultationId: 2,
+      doctorName: 'Dr. Lucas',
+      doctorEmail: 'doctor.lucas@email.com',
+      doctorAge: '22 anos',
+      consultationType: 'Rotina',
+      consultationTime: '14:00',
+      consultationStatus: 'performed'
+    },
   ]);
 
   function filterConsultationsByStatus() {
@@ -72,6 +84,10 @@ export default function PatientConsultScreen() {
       <ScheduleConsultationModal 
         active={isSchedulingConsultationActive}
         disableModalFn={() => setIsSchedulingConsultationActive(false)}
+      />
+      <ViewConsultationLocationModal 
+        active={isViewConsultationLocationActive}
+        disableModalFn={setIsViewConstationLocationModal(false)}
       />
       <ScheduleBriefModal 
         active={isScheduleBriefActive}
