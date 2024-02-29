@@ -25,6 +25,6 @@ export const ModalContainer = styled.View`
 
 export const ModalImage = styled.Image`
     width: 100%;
-    height: ${props => props.heightPercentage}%;
+    height: ${props => props.heightPercentage ? props.heightPercentage : '0'}%;
     border-radius: 10px;
 `;

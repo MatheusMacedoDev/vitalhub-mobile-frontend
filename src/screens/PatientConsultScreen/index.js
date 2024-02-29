@@ -18,12 +18,10 @@ export default function PatientConsultScreen() {
 
   const [isSchedulingConsultationActive, setIsSchedulingConsultationActive] = useState(false);
 
-  const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
-  const [selectedUserData, setSelectedUserData] = useState({})
-
   const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(false);
 
-  const [isViewConsultationLocationActive, setIsViewConstationLocationModal] = useState(false);
+  const [isViewConsultationLocationActive, setIsViewConsultationLocationActive] = useState(true);
+  const [currentConsultationData, setCurrentConsultationData] = useState({ doctorName: 'Dr. Roberto', doctorCRM: 'CRM/SP-0458', selectedDoctorSpecialty: 'Cardiologista' });
 
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
@@ -33,6 +31,8 @@ export default function PatientConsultScreen() {
       doctorName: 'Dr. Lucas',
       doctorEmail: 'doctor.lucas@email.com',
       doctorAge: '22 anos',
+      doctorCRM: 'CRM/SP-9485',
+      selectedDoctorSpecialty: 'Cardiologista',
       consultationType: 'Rotina',
       consultationTime: '14:00',
       consultationStatus: 'scheduled'
@@ -42,6 +42,8 @@ export default function PatientConsultScreen() {
       doctorName: 'Dr. Lucas',
       doctorEmail: 'doctor.lucas@email.com',
       doctorAge: '22 anos',
+      doctorCRM: 'CRM/SP-9485',
+      selectedDoctorSpecialty: 'Cardiologista',
       consultationType: 'Rotina',
       consultationTime: '14:00',
       consultationStatus: 'performed'
@@ -85,13 +87,18 @@ export default function PatientConsultScreen() {
         active={isSchedulingConsultationActive}
         disableModalFn={() => setIsSchedulingConsultationActive(false)}
       />
-      <ViewConsultationLocationModal 
-        active={isViewConsultationLocationActive}
-        disableModalFn={setIsViewConstationLocationModal(false)}
-      />
       <ScheduleBriefModal 
         active={isScheduleBriefActive}
         disableModalFn={() => setIsScheduleBriefActive(false)}
+      />
+      <ViewConsultationLocationModal 
+        active={isViewConsultationLocationActive}
+        disableModalFn={() => setIsViewConsultationLocationActive(false)}
+        doctorData={{ 
+          doctorName: currentConsultationData.doctorName,
+          doctorSpecialty: currentConsultationData.selectedDoctorSpecialty,
+          doctorCRM: currentConsultationData.doctorCRM
+         }}
       />
       <ScreenContainer>
           <HomeHeader userName='Richard Kosta' userImageUri='https://avatars.githubusercontent.com/u/125266412?v=4' />
@@ -114,8 +121,6 @@ export default function PatientConsultScreen() {
                     consultationTime={item.consultationTime}
                     cardType={item.consultationStatus}
                     activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
-                    activeInserMedicalRecordModalFn={() => setIsInsertMedicalRecordModalActive(true)}
-                    setCurrentUserDataFn={setSelectedUserData}
                   />
                 }
               />
