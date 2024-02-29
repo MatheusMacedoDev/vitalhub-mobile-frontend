@@ -2,9 +2,9 @@ import React from 'react';
 import { CancelationLink, CardContainer, CardImage, CardInfoContainer, ConsultationTypeText, GreyTimeContainer, GreyTimeText, MedicalRecordLink, PatientAgeText, PatientNameText, SubtitleInfoWrapper, TimeContainer, TimeText } from './style';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 
-export default function ConsultationCard({ userName, userEmail, userAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null, setCurrentUserDataFn = null }) {
+export default function ConsultationCard({ userName, userEmail, userAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null, setCurrentUserDataFn = null, handleCardClick = null }) {
   return (
-    <CardContainer>
+    <CardContainer onPress={handleCardClick}>
         <CardImage 
             source={require('../../assets/patient-image.png')}
         />

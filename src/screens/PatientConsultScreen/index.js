@@ -20,8 +20,8 @@ export default function PatientConsultScreen() {
 
   const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(false);
 
-  const [isViewConsultationLocationActive, setIsViewConsultationLocationActive] = useState(true);
-  const [currentConsultationData, setCurrentConsultationData] = useState({ doctorName: 'Dr. Roberto', doctorCRM: 'CRM/SP-0458', selectedDoctorSpecialty: 'Cardiologista' });
+  const [isViewConsultationLocationActive, setIsViewConsultationLocationActive] = useState(false);
+  const [currentConsultationData, setCurrentConsultationData] = useState({});
 
   const [selectedConsultationType, setSelectedConsultationType] = useState(0);
   const [selectedConsultationData, setSelectedConsultationData] = useState([]);
@@ -121,6 +121,10 @@ export default function PatientConsultScreen() {
                     consultationTime={item.consultationTime}
                     cardType={item.consultationStatus}
                     activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
+                    handleCardClick={() => {
+                      setCurrentConsultationData(item);
+                      setIsViewConsultationLocationActive(true);
+                    }}
                   />
                 }
               />
