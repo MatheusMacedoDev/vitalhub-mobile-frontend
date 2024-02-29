@@ -23,5 +23,5 @@ export const Input = styled.TextInput.attrs({
     font-family: 'MontserratAlternates_600SemiBold';
     border: 2px solid #49B3BA;
     border-radius: 10px;
-    padding: 16px 16px 16px 22px;
+    padding: 20px;
 `;
