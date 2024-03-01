@@ -8,7 +8,7 @@ import UnsignedLink from '../../components/UnsignedLink'
 import SelectInput from '../../components/SelectInput'
 import FullCalender from '../../components/FullCalendar'
 
-export default function DateSelectionScreen() {
+export default function DateSelectionScreen({ navigation }) {
     const [selectedDate, setSelectedDate] = useState();
     const [selectedTime, setSelectedTime] = useState();
 
@@ -33,6 +33,7 @@ export default function DateSelectionScreen() {
             <ButtonLinkWrapper>
                 <UnsignedButton 
                     buttonText='Confirmar'
+                    handleClickFn={() => navigation.navigate('patientConsult', { openScheduleBrief: true })}
                 />
                 <UnsignedLink 
                     linkText='Cancelar'

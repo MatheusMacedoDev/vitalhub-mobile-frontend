@@ -8,7 +8,7 @@ import UnsignedButton from '../../components/UnsignedButton';
 import UnsignedLink from '../../components/UnsignedLink';
 import { ButtonLinkWrapper } from './style'
 
-export default function ClinicSelectionScreen() {
+export default function ClinicSelectionScreen({ navigation }) {
     const [selectedClinicId, setSelectedClinicId] = useState('');
     const [clinicsData, setClinicsData] = useState([
         {
@@ -63,6 +63,7 @@ export default function ClinicSelectionScreen() {
         <ButtonLinkWrapper>
             <UnsignedButton 
                 buttonText='Continuar'
+                handleClickFn={() => navigation.navigate('doctorSelection')}
             />
             <UnsignedLink 
                 linkText='Cancelar'

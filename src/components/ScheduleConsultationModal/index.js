@@ -9,7 +9,7 @@ import SelectInput from '../SelectInput'
 import ButtonSelectInput from '../ButtonSelectInput'
 import InternalInput from '../InternalInput'
 
-export default function ScheduleConsultationModal({ active = true, disableModalFn = null }) {
+export default function ScheduleConsultationModal({ active = true, disableModalFn = null, navigation = null }) {
   const [consultationType, setConsultationType] = useState('');
   const [consultationLevel, setConsultationLevel] = useState('');
 
@@ -36,6 +36,7 @@ export default function ScheduleConsultationModal({ active = true, disableModalF
 
         <UnsignedButton 
             buttonText='Continuar'
+            handleClickFn={() => navigation.navigate('clinicSelection')}
         />
         <UnsignedLink
             linkText='Cancelar'

@@ -13,12 +13,12 @@ import ScheduleConsultationModal from '../../components/ScheduleConsultationModa
 import ScheduleBriefModal from '../../components/ScheduleBriefModal';
 import ViewConsultationLocationModal from '../../components/ViewConsultationLocationModal';
 
-export default function PatientConsultScreen() {
+export default function PatientConsultScreen({ navigation, route }) {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
 
   const [isSchedulingConsultationActive, setIsSchedulingConsultationActive] = useState(false);
 
-  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(false);
+  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(canOpenScheduleBrief());
 
   const [isViewConsultationLocationActive, setIsViewConsultationLocationActive] = useState(false);
   const [currentConsultationData, setCurrentConsultationData] = useState({});
@@ -49,6 +49,15 @@ export default function PatientConsultScreen() {
       consultationStatus: 'performed'
     },
   ]);
+
+  function canOpenScheduleBrief() {
+    try {
+      const { openScheduleBrief } = route.params;
+      return openScheduleBrief;
+    } catch(err) {
+      return false;
+    }
+  }
 
   function filterConsultationsByStatus() {
     const isScheduledConsultation = consultation => consultation.consultationStatus == 'scheduled';
@@ -86,6 +95,7 @@ export default function PatientConsultScreen() {
       <ScheduleConsultationModal 
         active={isSchedulingConsultationActive}
         disableModalFn={() => setIsSchedulingConsultationActive(false)}
+        navigation={navigation}
       />
       <ScheduleBriefModal 
         active={isScheduleBriefActive}

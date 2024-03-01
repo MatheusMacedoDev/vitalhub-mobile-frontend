@@ -8,7 +8,7 @@ import UnsignedLink from '../../components/UnsignedLink'
 import DoctorCard from '../../components/DoctorCard'
 import { CardsList } from '../../components/DoctorCard/style'
 
-export default function DoctorSelectionScreen() {
+export default function DoctorSelectionScreen({ navigation }) {
   const [selectedDoctorId, setSelectedDoctorId] = useState(0);
   const [doctorsData, setDoctorsData] = useState([
     {
@@ -54,6 +54,7 @@ export default function DoctorSelectionScreen() {
       <ButtonLinkWrapper>
         <UnsignedButton 
           buttonText='Continuar'
+          handleClickFn={() => navigation.navigate('dateSelection')}
         />
         <UnsignedLink 
           linkText='Cancelar'

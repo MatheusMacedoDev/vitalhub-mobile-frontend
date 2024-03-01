@@ -1,10 +1,10 @@
 import React from 'react'
 import { ButtonText, ButtonContainer, GoogleButtonContainer, GoogleButtonText, GoogleIcon } from './style'
 
-export default function UnsignedButton({ buttonText, isGoogleButton = false }) {
+export default function UnsignedButton({ buttonText, isGoogleButton = false, handleClickFn = null }) {
   if (isGoogleButton) {
     return (
-      <GoogleButtonContainer>
+      <GoogleButtonContainer onPress={handleClickFn}>
         <GoogleIcon 
           source={require('../../assets/google-icon.png')}
         />
@@ -16,7 +16,7 @@ export default function UnsignedButton({ buttonText, isGoogleButton = false }) {
   }
 
   return (
-    <ButtonContainer>
+    <ButtonContainer onPress={handleClickFn}>
       <ButtonText>
         { buttonText }
       </ButtonText>
