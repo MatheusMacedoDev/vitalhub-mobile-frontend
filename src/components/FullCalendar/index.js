@@ -1,5 +1,5 @@
 import { Calendar, LocaleConfig } from 'react-native-calendars';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { DayContainer, DayText } from './style';
 
@@ -19,7 +19,7 @@ LocaleConfig.locales['br'] = {
     'Dezembro'
   ],
   dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-  dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+  dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
   today: "Aujourd'hui"
 };
 LocaleConfig.defaultLocale = 'br';
@@ -36,7 +36,15 @@ export default function FullCalender({ selectedDate = '', handleSelectedDateFn =
             style={styles.calendar}
             theme={{
                 dotColor: '#60BFC5',
-                calendarBackground: '#FBFBFB'
+                calendarBackground: '#FBFBFB',
+                'stylesheet.calendar.header': {
+                    monthText: {
+                        fontFamily: 'MontserratAlternates_600SemiBold',
+                        color: '#5F5C6B',
+                        fontSize: 20,
+                        marginBottom: 18
+                    }
+                }
             }}
             dayComponent={({ date, state }) =>
                 <TouchableOpacity onPress={() => {
