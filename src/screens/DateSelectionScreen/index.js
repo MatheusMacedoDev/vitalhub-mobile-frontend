@@ -12,6 +12,8 @@ export default function DateSelectionScreen() {
     const [selectedDate, setSelectedDate] = useState();
     const [selectedTime, setSelectedTime] = useState();
 
+    const [avaliableTimesData, setAvaliableTimesData] = useState(['12:30', '14:00', '15:30', '16:00', '17:00']);
+
     return (
         <Container>
             <Title>Selecionar data</Title>
@@ -25,6 +27,7 @@ export default function DateSelectionScreen() {
                 labelText='Selecione um horário disponível'
                 defaultText='Selecionar horário'
                 handleSelectedFn={setSelectedTime}
+                data={avaliableTimesData}
             />
 
             <ButtonLinkWrapper>
