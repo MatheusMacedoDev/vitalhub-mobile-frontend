@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import { CardAdditionalInfo, CardContainer, CardTextInfo, ClinicLocationText, ClinicNameText, OpenedDaysContainer, OpenedDaysText, StarContainer, StarText } from './style'
+import { CardAdditionalInfo, CardTextInfo, ClinicLocationText, ClinicNameText, OpenedDaysContainer, OpenedDaysText, StarContainer, StarText } from './style'
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { CardContainer } from '../Card/style';
 
 export default function ClinicCard({ clinicName, clinicLocation, clinicStarsNumber, clinicOpenedRange, isSelected = false }) {
   return (
-    <CardContainer onPre isSelected={isSelected}>
+    <CardContainer isSelected={isSelected}>
         <CardTextInfo>
             <ClinicNameText>{ clinicName }</ClinicNameText>
             <ClinicLocationText>{ clinicLocation }</ClinicLocationText>
