@@ -8,11 +8,10 @@ import UnsignedLink from "../../components/UnsignedLink";
 import { useState } from "react";
 import InternalTextArea from "../../components/InternalTextArea";
 import { UserProfileImage } from "../../components/UserImage/style";
-import { Pressable, SafeAreaView, ScrollView, View } from "react-native";
 import { ScrollContainer } from "../../components/ScrollContainer/style";
 
 export default function InsertMedicalRecordScreen() {
-    const [isEditing, setIsEditing] = useState(true);
+    const [isEditing, setIsEditing] = useState(false);
 
     return (
         <ScrollContainer>
@@ -67,10 +66,12 @@ export default function InsertMedicalRecordScreen() {
                 <UnsignedButtonsWrapper>
                     <UnsignedButton 
                         buttonText='Salvar'
+                        handleClickFn={() => setIsEditing(false)}
                     />
                     { !isEditing ? (
                         <UnsignedButton 
                             buttonText='Editar'
+                            handleClickFn={() => setIsEditing(true)}
                         />
                     ) : null}
                 </UnsignedButtonsWrapper>
