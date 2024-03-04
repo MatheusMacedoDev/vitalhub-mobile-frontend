@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const MedicalExamsContainer = styled.View`
     width: 100%;
+    margin-bottom: 20px;
 `;
 
 export const ExamPhotosContainer = styled.View`

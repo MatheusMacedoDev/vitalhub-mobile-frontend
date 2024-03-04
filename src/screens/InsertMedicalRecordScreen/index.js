@@ -8,12 +8,14 @@ import UnsignedLink from "../../components/UnsignedLink";
 import { useState } from "react";
 import InternalTextArea from "../../components/InternalTextArea";
 import { UserProfileImage } from "../../components/UserImage/style";
+import { Pressable, SafeAreaView, ScrollView, View } from "react-native";
+import { ScrollContainer } from "../../components/ScrollContainer/style";
 
 export default function InsertMedicalRecordScreen() {
     const [isEditing, setIsEditing] = useState(true);
 
     return (
-        <>
+        <ScrollContainer>
             <UserProfileImage 
                 resizeMode="cover"
                 source={require('../../assets/user-profile-image.png')} 
@@ -76,6 +78,6 @@ export default function InsertMedicalRecordScreen() {
                     linkText='Cancelar' 
                 />
             </Container>
-        </>
+        </ScrollContainer>
     )
 }

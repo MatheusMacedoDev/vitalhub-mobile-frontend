@@ -7,10 +7,11 @@ import InternalTextArea from '../../components/InternalTextArea';
 import { UserProfileImage } from './style';
 import MedicalExams from '../../components/MedicalExams';
 import UnsignedLink from '../../components/UnsignedLink';
+import { ScrollContainer } from '../../components/ScrollContainer/style';
 
 export default function PatientViewMedicalRecord() {
   return (
-    <>
+    <ScrollContainer>
         <UserProfileImage 
             source={require('../../assets/doctor-image-extended.png')}
         />
@@ -47,6 +48,6 @@ export default function PatientViewMedicalRecord() {
                 linkText='Voltar'
             />
         </Container>
-    </>
+    </ScrollContainer>
   )
 }

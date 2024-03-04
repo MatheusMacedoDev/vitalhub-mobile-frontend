@@ -6,10 +6,11 @@ import { InternalInputsWrapper } from '../../components/InternalInput/style'
 import InternalTextArea from '../../components/InternalTextArea'
 import UnsignedButton from '../../components/UnsignedButton'
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
+import { ScrollContainer } from '../../components/ScrollContainer/style';
 
 export default function PatientProfileScreen() {
   return (
-    <>
+    <ScrollContainer>
       <UserProfileImage 
           resizeMode="cover"
           source={require('../../assets/user-profile-image.png')} 
@@ -52,6 +53,6 @@ export default function PatientProfileScreen() {
               />
           </UnsignedButtonsWrapper>
       </Container>
-    </>
+    </ScrollContainer>
   )
 }
