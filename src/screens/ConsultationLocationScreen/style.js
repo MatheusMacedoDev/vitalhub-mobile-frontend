@@ -1,10 +1,5 @@
 import styled from 'styled-components/native';
 
-export const MapImage = styled.Image`
-    width: 100%;
-    height: 55%;
-`;
-
 export const LocationContainer = styled.View`
     border-radius: 15px 15px 0 0;
     flex: 1;

@@ -1,17 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { LocationContainer, MapImage } from './style'
-import { SecondSubtitle, Title } from '../../components/Title/style'
-import InternalTextArea from '../../components/InternalTextArea'
-import { InternalInputsWrapper } from '../../components/InternalInput/style'
-import { SplitedTextAreasContainer } from '../../components/InternalTextArea/style'
+import React from 'react';
+import { LocationContainer } from './style';
+import { SecondSubtitle, Title } from '../../components/Title/style';
+import InternalTextArea from '../../components/InternalTextArea';
+import { InternalInputsWrapper } from '../../components/InternalInput/style';
+import { SplitedTextAreasContainer } from '../../components/InternalTextArea/style';
+import Map from '../../components/Map';
 
 export default function ConsultationLocationScreen() {
   return (
     <>
-        <MapImage 
+        {/*<MapImage 
             source={require('../../assets/map-image.png')}
-        />
+        />*/}
+        <Map />
         <LocationContainer>
             <Title marginTop={10}>Clínica Natureh</Title>
             <SecondSubtitle>São Paulo, SP</SecondSubtitle>
