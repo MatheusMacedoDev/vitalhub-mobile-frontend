@@ -7,7 +7,12 @@ import UnsignedLink from '../../components/UnsignedLink'
 import UnsignedButton from '../../components/UnsignedButton'
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
+
+  async function Login() {
+    navigation.navigate('Main');
+  }
+
   return (
     <Container>
       <Logo />
@@ -28,8 +33,9 @@ export default function LoginScreen() {
         isGreyLink={true}
       />
       <UnsignedButtonsWrapper>
-        <UnsignedButton 
+        <UnsignedButton
           buttonText='Entrar'
+          handleClickFn={Login}
         />
         <UnsignedButton 
           buttonText='Entrar com o Google'

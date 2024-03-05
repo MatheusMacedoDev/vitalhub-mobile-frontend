@@ -5,5 +5,5 @@ export const Container = styled.SafeAreaView`
     align-items: center;
     background-color: #FAFAFA;
     padding: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
 `;

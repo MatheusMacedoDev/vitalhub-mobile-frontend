@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const LinkWrapper = styled.View`
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     gap: 5px;
     justify-content: ${props => props.$isCenter ? 'center' : 'flex-start'};
 `;
@@ -10,7 +10,7 @@ export const LinkWrapper = styled.View`
 export const LinkText = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 14px;
-    `;
+`;
 
 export const BlueLink = styled(LinkText)`
     color: #4D659D;
