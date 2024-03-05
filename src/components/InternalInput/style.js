@@ -20,6 +20,7 @@ export const Input = styled.TextInput.attrs({
     placeholderTextColor: '#34898F'
 })`
     font-size: 14px;
+    text-align-vertical: ${props => props.numberOfLines === 1 ? 'center' : 'top'};
     font-family: 'MontserratAlternates_600SemiBold';
     border: 2px solid #49B3BA;
     border-radius: 10px;

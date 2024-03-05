@@ -33,6 +33,7 @@ export default function InsertMedicalRecordScreen() {
                             <InternalInput 
                                 inputText="Descrição da consulta"
                                 placeholder="Descrição"
+                                numberOfLines={4}
                             />
                             <InternalInput 
                                 inputText="Diagnóstico do paciente"
@@ -41,6 +42,7 @@ export default function InsertMedicalRecordScreen() {
                             <InternalInput 
                                 inputText="Prescrição médica"
                                 placeholder="Prescrição médica"
+                                numberOfLines={4}
                             />
                         </>
                     ) : 
