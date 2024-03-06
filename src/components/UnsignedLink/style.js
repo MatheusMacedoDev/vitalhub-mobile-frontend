@@ -2,9 +2,12 @@ import styled from 'styled-components/native';
 
 export const LinkWrapper = styled.View`
     flex-direction: row;
-    width: 100%;
+    width: 90%;
     gap: 5px;
     justify-content: ${props => props.$isCenter ? 'center' : 'flex-start'};
+`;
+
+export const PressableLink = styled.TouchableOpacity`
 `;
 
 export const LinkText = styled.Text`

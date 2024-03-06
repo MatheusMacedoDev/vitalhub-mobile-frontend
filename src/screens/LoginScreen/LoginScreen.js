@@ -9,8 +9,16 @@ import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 
 export default function LoginScreen({ navigation }) {
 
-  async function Login() {
+  async function login() {
     navigation.replace('Main');
+  }
+
+  function forgotPassword() {
+    navigation.navigate('recoverPassword');
+  }
+
+  function createAccount() {
+    navigation.navigate('createAccount');
   }
 
   return (
@@ -31,11 +39,12 @@ export default function LoginScreen({ navigation }) {
       <UnsignedLink 
         linkText='Esqueceu sua senha?'
         isGreyLink={true}
+        handleClickFn={forgotPassword}
       />
       <UnsignedButtonsWrapper>
         <UnsignedButton
           buttonText='Entrar'
-          handleClickFn={Login}
+          handleClickFn={login}
         />
         <UnsignedButton 
           buttonText='Entrar com o Google'
@@ -45,6 +54,7 @@ export default function LoginScreen({ navigation }) {
       <UnsignedLink 
         additionalText='Não tem conta?'
         linkText='Crie uma conta agora!'
+        handleClickFn={createAccount}
       />
     </Container>
   )

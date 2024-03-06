@@ -49,7 +49,7 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={({ route }) => ({
-                    headerShown: false
+                    headerShown: true
                 })}
             >
                 <Stack.Screen
@@ -61,11 +61,6 @@ export default function App() {
                     name='Main'
                     component={Main}
                 />
-                {/*<Stack.Screen
-                    name='navigation'
-                    component={StackNavigationScreen}
-                    options={{ title: 'Navigation' }}
-                />*/}
                 <Stack.Screen
                     name='splashScreen'
                     component={SplashScreen}

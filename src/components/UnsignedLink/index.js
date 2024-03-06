@@ -1,16 +1,16 @@
-import { View, Text, Touchable, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import React from 'react'
-import { LinkWrapper, LinkText, BlueLink, GreyLink } from './style'
+import { LinkWrapper, LinkText, BlueLink, GreyLink, PressableLink } from './style'
 
 export default function UnsignedLink({ additionalText = '', linkText, isGreyLink = false, handleClickFn = null }) {
   return (
     <LinkWrapper $isCenter={!isGreyLink}>
-      <TouchableOpacity onPress={handleClickFn}>
-        { additionalText != '' && <LinkText>{ additionalText }</LinkText> }
+      { additionalText != '' && <LinkText>{ additionalText }</LinkText> }
+      <PressableLink onPress={handleClickFn}>
         {isGreyLink 
           ? <GreyLink>{ linkText }</GreyLink>
           : <BlueLink>{ linkText }</BlueLink>}
-      </TouchableOpacity>
+      </PressableLink>
     </LinkWrapper>
   )
 }
