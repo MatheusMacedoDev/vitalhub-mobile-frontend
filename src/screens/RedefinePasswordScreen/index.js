@@ -8,7 +8,11 @@ import { BasicInput, BasicInputWrapper } from '../../components/BasicInput/style
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 import UnsignedButton from '../../components/UnsignedButton'
 
-export default function RedefinePasswordScreen() {
+export default function RedefinePasswordScreen({ navigation }) {
+    function returnToLogin() {
+        navigation.navigate('login');
+    }
+
   return (
     <Container>
         <Logo />
@@ -31,6 +35,7 @@ export default function RedefinePasswordScreen() {
         <UnsignedButtonsWrapper>
             <UnsignedButton 
                 buttonText='Confirmar nova senha'
+                handleClickFn={returnToLogin}
             />
         </UnsignedButtonsWrapper>
     </Container>

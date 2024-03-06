@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from '../../components/Container/style'
 import Logo from '../../components/Logo'
 import { Title } from '../../components/Title/style'

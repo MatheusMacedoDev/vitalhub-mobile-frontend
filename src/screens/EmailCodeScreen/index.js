@@ -8,8 +8,12 @@ import UnsignedButton from '../../components/UnsignedButton';
 import UnsignedLink from '../../components/UnsignedLink';
 import CodeInput from '../../components/CodeInput';
 
-export default function EmailCodeScreen() {
+export default function EmailCodeScreen({ navigation }) {
     const [code, setCode] = useState('');
+
+    function passToRedefinePassword() {
+        navigation.navigate('redefinePassword');
+    }
 
     return (
         <Container>
@@ -28,6 +32,7 @@ export default function EmailCodeScreen() {
             <UnsignedButtonsWrapper>
                 <UnsignedButton 
                     buttonText='Entrar'
+                    handleClickFn={passToRedefinePassword}
                 />
             </UnsignedButtonsWrapper>
             <UnsignedLink 

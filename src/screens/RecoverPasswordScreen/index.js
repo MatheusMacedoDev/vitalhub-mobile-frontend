@@ -8,7 +8,11 @@ import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 import UnsignedButton from '../../components/UnsignedButton'
 import { CommandText } from '../../components/CommandText/style'
 
-export default function RecoverPasswordScreen() {
+export default function RecoverPasswordScreen({ navigation }) {
+    function passToEmailCode() {
+        navigation.navigate('emailCode');
+    }
+
   return (
     <Container>
         <Logo />
@@ -26,6 +30,7 @@ export default function RecoverPasswordScreen() {
         <UnsignedButtonsWrapper>
             <UnsignedButton 
                 buttonText='Continuar'
+                handleClickFn={passToEmailCode}
             />
         </UnsignedButtonsWrapper>
     </Container>

@@ -8,7 +8,11 @@ import UnsignedButton from '../../components/UnsignedButton'
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 import UnsignedLink from '../../components/UnsignedLink'
 
-export default function CreateAccountScreen() {
+export default function CreateAccountScreen({ navigation }) {
+    function returnToLogin() {
+        navigation.navigate('login');
+    }
+
   return (
     <Container>
         <Logo />
@@ -34,10 +38,12 @@ export default function CreateAccountScreen() {
         <UnsignedButtonsWrapper>
             <UnsignedButton 
                 buttonText='Cadastrar'
+                handleClickFn={returnToLogin}
             />
         </UnsignedButtonsWrapper>
         <UnsignedLink 
             linkText='Cancelar'
+            handleClickFn={returnToLogin}
         />
     </Container>
   )
