@@ -49,7 +49,7 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={({ route }) => ({
-                    headerShown: true
+                    headerShown: false
                 })}
             >
                 <Stack.Screen

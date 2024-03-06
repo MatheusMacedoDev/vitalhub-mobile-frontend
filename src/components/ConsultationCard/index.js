@@ -2,7 +2,7 @@ import React from 'react';
 import { CancelationLink, CardContainer, CardImage, CardInfoContainer, ConsultationTypeText, GreyTimeContainer, GreyTimeText, MedicalRecordLink, PatientAgeText, PatientNameText, SubtitleInfoWrapper, TimeContainer, TimeText } from './style';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 
-export default function ConsultationCard({ userName, userEmail, userAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInserMedicalRecordModalFn = null, setCurrentUserDataFn = null, handleCardClick = null }) {
+export default function ConsultationCard({ userName, userEmail, userAge, consultationType, consultationTime, cardType, activeCancelingModalFn = null, activeInsertMedicalRecordModalFn = null, setCurrentUserDataFn = null, handleCardClick = null }) {
   return (
     <CardContainer onPress={handleCardClick}>
         <CardImage 
@@ -30,7 +30,7 @@ export default function ConsultationCard({ userName, userEmail, userAge, consult
 
         { cardType == 'performed' ? (
             <MedicalRecordLink onPress={() => {
-                activeInserMedicalRecordModalFn()
+                activeInsertMedicalRecordModalFn()
                 setCurrentUserDataFn({
                     userName: userName,
                     userAge: userAge,

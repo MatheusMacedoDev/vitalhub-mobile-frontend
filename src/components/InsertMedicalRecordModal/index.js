@@ -12,25 +12,32 @@ export default function InsertMedicalRecordModal({
         userName: 'user name',
         userAge: 'x anos',
         userEmail: 'useremail@email.com'
-    }  
+    },
+    navigation 
 }) {
-  return (
-    <Modal active={active} modalHeighPercentage={60}>
-        <ModalImage heightPercentage={50} source={require('../../assets/patient-image-extended.png')} />
-        <UserMainInfo 
-            username={userData.userName}
-            infoArr={[
-                userData.userAge,
-                userData.userEmail
-            ]}
-        />
-        <UnsignedButton 
-            buttonText='Inserir Prontuário'
-        />
-        <UnsignedLink 
-            linkText='Cancelar'
-            handleClickFn={disableModalFn}
-        />
-    </Modal>
-  );
+
+    function passToInsertMedicalRecord() {
+        navigation.navigate('insertMedicalRecord');
+    }
+
+    return (
+        <Modal active={active} modalHeighPercentage={60}>
+            <ModalImage heightPercentage={50} source={require('../../assets/patient-image-extended.png')} />
+            <UserMainInfo 
+                username={userData.userName}
+                infoArr={[
+                    userData.userAge,
+                    userData.userEmail
+                ]}
+            />
+            <UnsignedButton 
+                buttonText='Inserir Prontuário'
+                handleClickFn={passToInsertMedicalRecord}
+            />
+            <UnsignedLink 
+                linkText='Cancelar'
+                handleClickFn={disableModalFn}
+            />
+        </Modal>
+    );
 }

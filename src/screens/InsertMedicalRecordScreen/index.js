@@ -10,8 +10,12 @@ import InternalTextArea from "../../components/InternalTextArea";
 import { UserProfileImage } from "../../components/UserImage/style";
 import { ScrollContainer } from "../../components/ScrollContainer/style";
 
-export default function InsertMedicalRecordScreen() {
+export default function InsertMedicalRecordScreen({ navigation }) {
     const [isEditing, setIsEditing] = useState(false);
+
+    function returnToHome() {
+        navigation.navigate('DoctorConsult');
+    }
 
     return (
         <ScrollContainer>
@@ -79,6 +83,7 @@ export default function InsertMedicalRecordScreen() {
                 </UnsignedButtonsWrapper>
                 <UnsignedLink 
                     linkText='Cancelar' 
+                    handleClickFn={returnToHome}
                 />
             </Container>
         </ScrollContainer>

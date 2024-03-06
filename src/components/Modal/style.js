@@ -1,9 +1,13 @@
 import styled from 'styled-components/native';
+import { Dimensions } from 'react-native';
+
+const fullWidth = Dimensions.get('screen').width;
+const fullHeight = Dimensions.get('screen').height;
 
 export const BlackBox = styled.View`
     display: ${props => props.active ? 'flex' : 'none'};
-    width: 100%;
-    height: 100%;
+    width: ${fullWidth}px;
+    height: ${fullHeight}px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;

@@ -9,7 +9,7 @@ import { ConsultationCarList } from '../../components/ConsultationCardList/style
 import CancelConsultationModal from '../../components/CancelConsultationModal'
 import InsertMedicalRecordModal from '../../components/InsertMedicalRecordModal'
 
-export default function DoctorConsultScreen() {
+export default function DoctorConsultScreen({ navigation }) {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
 
   const [isInsertMedicalRecordModalActive, setIsInsertMedicalRecordModalActive] = useState(false);
@@ -103,6 +103,7 @@ export default function DoctorConsultScreen() {
         active={isInsertMedicalRecordModalActive} 
         disableModalFn={() => setIsInsertMedicalRecordModalActive(false)} 
         userData={selectedUserData}
+        navigation={navigation}
       />
       <ScreenContainer>
           <HomeHeader userName='Dr. Lucas' userImageUri='https://avatars.githubusercontent.com/u/125275518?v=4' />
@@ -125,7 +126,7 @@ export default function DoctorConsultScreen() {
                   consultationTime={item.consultationTime}
                   cardType={item.consultationStatus}
                   activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
-                  activeInserMedicalRecordModalFn={() => setIsInsertMedicalRecordModalActive(true)}
+                  activeInsertMedicalRecordModalFn={() => setIsInsertMedicalRecordModalActive(true)}
                   setCurrentUserDataFn={setSelectedUserData}
                 />
               }

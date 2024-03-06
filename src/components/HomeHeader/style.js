@@ -3,9 +3,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export const Header = styled(LinearGradient)`
     background-color: #60BFC5;
-    height: 15%;
+    height: 18%;
     border-radius: 0 0 15px 15px;
-    padding: 22px 20px;
+    padding: 30px 22px 0px 22px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
