@@ -10,7 +10,7 @@ import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 export default function LoginScreen({ navigation }) {
 
   async function Login() {
-    navigation.navigate('Main');
+    navigation.replace('Main');
   }
 
   return (

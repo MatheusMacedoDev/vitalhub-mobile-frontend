@@ -3,7 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DoctorConsultScreen from '../DoctorConsultScreen';
 import PatientProfileScreen from '../PatientProfileScreen';
 
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+
+import { ContentIcon, TextIcon } from './style';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -17,10 +19,26 @@ export const Main = () => {
                 tabBarShowLabel: false,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => {
-                    if( route.name === "DoctorConsult" ) {
-                        return ()
-                    } else {
+                    const getBackgroundColor = () => focused ? '#ECF2FF' : 'transparent';
 
+                    if( route.name === "DoctorConsult" ) {
+                        return (
+                            <ContentIcon
+                                tabBarActiveBackgroundColor={ getBackgroundColor() }
+                            >
+                                <FontAwesome name='calendar' size={18} color='#4E4B59' />
+                                { focused && <TextIcon>Agenda</TextIcon> }
+                            </ContentIcon>
+                        )
+                    } else {
+                        return (
+                            <ContentIcon
+                                tabBarActiveBackgroundColor={ getBackgroundColor() }
+                            >
+                                <FontAwesome5 name='user-circle' size={18} color='#4E4B59' />
+                                { focused && <TextIcon>Perfil</TextIcon> }
+                            </ContentIcon>
+                        )
                     }
                 }
             })}
@@ -28,12 +46,10 @@ export const Main = () => {
             <BottomTab.Screen 
                 name='DoctorConsult'
                 component={DoctorConsultScreen}
-                options={{headerShown: false}}
             />
             <BottomTab.Screen 
                 name='PatientProfile'
                 component={PatientProfileScreen}
-                options={{headerShown: false}}
             />
         </BottomTab.Navigator>
     );

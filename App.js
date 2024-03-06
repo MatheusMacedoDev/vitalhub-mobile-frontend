@@ -55,7 +55,7 @@ export default function App() {
                 <Stack.Screen
                     name='login'
                     component={LoginScreen}
-                    options={{ title: 'Login', headerShown: false }}
+                    options={{ title: 'Login' }}
                 />
                 <Stack.Screen 
                     name='Main'
@@ -69,72 +69,72 @@ export default function App() {
                 <Stack.Screen
                     name='splashScreen'
                     component={SplashScreen}
-                    options={{ title: 'Splash Screen', headerShown: false }}
+                    options={{ title: 'Splash Screen' }}
                 />
                 <Stack.Screen
                     name='recoverPassword'
                     component={RecoverPasswordScreen}
-                    options={{ title: 'Recover Password', headerShown: false }}
+                    options={{ title: 'Recover Password' }}
                 />
                 <Stack.Screen
                     name='redefinePassword'
                     component={RedefinePasswordScreen}
-                    options={{ title: 'Redefine Password', headerShown: false }}
+                    options={{ title: 'Redefine Password' }}
                 />
                 <Stack.Screen
                     name='createAccount'
                     component={CreateAccountScreen}
-                    options={{ title: 'Create Account', headerShown: false }}
+                    options={{ title: 'Create Account' }}
                 />
                 <Stack.Screen
                     name='emailCode'
                     component={EmailCodeScreen}
-                    options={{ title: 'Email Code', headerShown: false }}
+                    options={{ title: 'Email Code' }}
                 />
                 <Stack.Screen
                     name='insertMedicalRecord'
                     component={InsertMedicalRecordScreen}
-                    options={{ title: 'InsertMedicalRecord', headerShown: false }}
+                    options={{ title: 'InsertMedicalRecord' }}
                 />
                 <Stack.Screen
                     name='patientProfile'
                     component={PatientProfileScreen}
-                    options={{ title: 'PatientProfile', headerShown: false }}
+                    options={{ title: 'PatientProfile' }}
                 />
                 <Stack.Screen
                     name='doctorConsult'
                     component={DoctorConsultScreen}
-                    options={{ title: 'DoctorConsult', headerShown: false }}
+                    options={{ title: 'DoctorConsult' }}
                 />
                 <Stack.Screen
                     name='patientConsult'
                     component={PatientConsultScreen}
-                    options={{ title: 'PatientConsult', headerShown: false }}
+                    options={{ title: 'PatientConsult' }}
                 />
                 <Stack.Screen
                     name='clinicSelection'
                     component={ClinicSelectionScreen}
-                    options={{ title: 'ClinicSelection', headerShown: false }}
+                    options={{ title: 'ClinicSelection' }}
                 />
                 <Stack.Screen
                     name='doctorSelection'
                     component={DoctorSelectionScreen}
-                    options={{ title: 'DoctorSelection', headerShown: false }}
+                    options={{ title: 'DoctorSelection' }}
                 />
                 <Stack.Screen
                     name='dateSelection'
                     component={DateSelectionScreen}
-                    options={{ title: 'DateSelection', headerShown: false }}
+                    options={{ title: 'DateSelection' }}
                 />
                 <Stack.Screen
                     name='consultationLocation'
                     component={ConsultationLocationScreen}
-                    options={{ title: 'ConsultationLocation', headerShown: false }}
+                    options={{ title: 'ConsultationLocation' }}
                 />
                 <Stack.Screen
                     name='patientViewMedicalRecord'
                     component={PatientViewMedicalRecord}
-                    options={{ title: 'PatientViewMedicalRecord', headerShown: false }}
+                    options={{ title: 'PatientViewMedicalRecord' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
