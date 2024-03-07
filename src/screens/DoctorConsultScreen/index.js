@@ -8,6 +8,7 @@ import ConsultationCard from '../../components/ConsultationCard'
 import { ConsultationCarList } from '../../components/ConsultationCardList/style'
 import CancelConsultationModal from '../../components/CancelConsultationModal'
 import InsertMedicalRecordModal from '../../components/InsertMedicalRecordModal'
+import { Host } from 'react-native-portalize'
 
 export default function DoctorConsultScreen({ navigation }) {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
@@ -106,7 +107,7 @@ export default function DoctorConsultScreen({ navigation }) {
         navigation={navigation}
       />
       <ScreenContainer>
-          <HomeHeader userName='Dr. Lucas' userImageUri='https://avatars.githubusercontent.com/u/125275518?v=4' />
+          <HomeHeader navigation={navigation} userName='Dr. Lucas' userImageUri='https://avatars.githubusercontent.com/u/125275518?v=4' />
           <Calendar />
           <Container>
             <ConsultationBar

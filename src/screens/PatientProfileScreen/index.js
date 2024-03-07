@@ -7,6 +7,7 @@ import InternalTextArea from '../../components/InternalTextArea'
 import UnsignedButton from '../../components/UnsignedButton'
 import { UnsignedButtonsWrapper } from '../../components/UnsignedButton/style'
 import { ScrollContainer } from '../../components/ScrollContainer/style';
+import { SplitedTextAreasContainer } from '../../components/InternalTextArea/style'
 
 export default function PatientProfileScreen() {
   return (
@@ -35,14 +36,18 @@ export default function PatientProfileScreen() {
                 inputText="Endereço"
                 textArea="Rua Vicenso Silva, 987"
             />
-            <InternalTextArea 
-                inputText="Cep"
-                textArea="06548-909"
-            />
-            <InternalTextArea 
-                inputText="Cidade"
-                textArea="Moema-SP"
-            />
+            <SplitedTextAreasContainer>
+                <InternalTextArea 
+                    widthPercentage={45}
+                    inputText="Cep"
+                    textArea="06548-909"
+                />
+                <InternalTextArea 
+                    widthPercentage={45}
+                    inputText="Cidade"
+                    textArea="Moema-SP"
+                />
+            </SplitedTextAreasContainer>
           </InternalInputsWrapper>
           <UnsignedButtonsWrapper>
               <UnsignedButton 

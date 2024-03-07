@@ -6,18 +6,19 @@ import UserMainInfo from '../UserMainInfo';
 import { ModalImage } from '../Modal/style';
 
 export default function InsertMedicalRecordModal({ 
+    consultationSituation = 'pendente',
+    navigation,
     active, 
     disableModalFn = null,
     userData = {
         userName: 'user name',
         userAge: 'x anos',
         userEmail: 'useremail@email.com'
-    },
-    navigation 
+    }
 }) {
-
-    function passToInsertMedicalRecord() {
-        navigation.navigate('insertMedicalRecord');
+    function handleClose(route) {
+        disableModalFn();
+        navigation.navigate(route);
     }
 
     return (
@@ -30,10 +31,18 @@ export default function InsertMedicalRecordModal({
                     userData.userEmail
                 ]}
             />
-            <UnsignedButton 
-                buttonText='Inserir Prontuário'
-                handleClickFn={passToInsertMedicalRecord}
-            />
+            { consultationSituation === 'pendente' ? (
+                <UnsignedButton 
+                    buttonText='Inserir Prontuário'
+                    handleClickFn={() => handleClose('insertMedicalRecord')}
+                />
+            ) : (
+                <UnsignedButton 
+                    buttonText='Ver Local da Consulta'
+                    handleClickFn={() => handleClose('consultationLocation')}
+                />
+
+            )}
             <UnsignedLink 
                 linkText='Cancelar'
                 handleClickFn={disableModalFn}

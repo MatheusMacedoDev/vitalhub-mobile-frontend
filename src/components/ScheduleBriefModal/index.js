@@ -4,11 +4,11 @@ import { BigGroup, SmallGroup, SmallSubtitle, SmallTitle, Subtitle, Title } from
 import UnsignedButton from '../UnsignedButton';
 import UnsignedLink from '../UnsignedLink';
 
-export default function ScheduleBriefModal({ active, disableModalFn = null }) {
+export default function ScheduleBriefModal({ active, disableModalFn = null, confirmModalFn = null }) {
   return (
     <Modal 
       active={active}
-      modalHeighPercentage={90}
+      modalHeighPercentage={75}
     >
       <BigGroup>
         <Title $marginTop={0}>Agendar consulta</Title>
@@ -35,6 +35,7 @@ export default function ScheduleBriefModal({ active, disableModalFn = null }) {
 
       <UnsignedButton 
         buttonText='Confirmar'
+        handleClickFn={confirmModalFn}
       />
       <UnsignedLink 
         linkText='Cancelar'

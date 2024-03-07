@@ -9,14 +9,17 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { ContentIcon, TextIcon } from './style';
 
 import { Host } from 'react-native-portalize'
+import { useState } from 'react';
 
 const BottomTab = createBottomTabNavigator();
 
-export const Main = () => {
+export const Main = ({ route }) => {
+    const [userType, setUserType] = useState('doctor');
+
     return (
         <Host>
             <BottomTab.Navigator
-                initialRouteName='DoctorConsult'
+                initialRouteName='PatientConsult'
                 screenOptions={({ route }) => ({
                     tabBarStyle: { backgroundColor: '#fff', height: 80, paddingTop: 10 },
                     tabBarActiveBackgroundColor: 'transparent',
@@ -25,7 +28,7 @@ export const Main = () => {
                     tabBarIcon: ({ focused }) => {
                         const getBackgroundColor = () => focused ? '#ECF2FF' : 'transparent';
 
-                        if( route.name === "DoctorConsult" ) {
+                        if( route.name === "Home" ) {
                             return (
                                 <ContentIcon
                                     tabBarActiveBackgroundColor={ getBackgroundColor() }
@@ -48,8 +51,8 @@ export const Main = () => {
                 })}
             >
                 <BottomTab.Screen 
-                    name='DoctorConsult'
-                    component={DoctorConsultScreen}
+                    name='Home'
+                    component={userType == 'patient' ? PatientConsultScreen : DoctorConsultScreen}
                 />
                 <BottomTab.Screen 
                     name='PatientProfile'

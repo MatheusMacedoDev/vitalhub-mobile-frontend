@@ -36,7 +36,10 @@ export default function ScheduleConsultationModal({ active = true, disableModalF
 
         <UnsignedButton 
             buttonText='Continuar'
-            handleClickFn={() => navigation.navigate('clinicSelection')}
+            handleClickFn={() => {
+              disableModalFn();
+              navigation.navigate('clinicSelection');
+            }}
         />
         <UnsignedLink
             linkText='Cancelar'

@@ -14,7 +14,7 @@ export default function InsertMedicalRecordScreen({ navigation }) {
     const [isEditing, setIsEditing] = useState(false);
 
     function returnToHome() {
-        navigation.navigate('DoctorConsult');
+        navigation.navigate('Main');
     }
 
     return (

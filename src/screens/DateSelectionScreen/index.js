@@ -7,6 +7,8 @@ import UnsignedButton from '../../components/UnsignedButton'
 import UnsignedLink from '../../components/UnsignedLink'
 import SelectInput from '../../components/SelectInput'
 import FullCalender from '../../components/FullCalendar'
+import ScheduleBriefModal from '../../components/ScheduleBriefModal'
+import { Host } from 'react-native-portalize'
 
 export default function DateSelectionScreen({ navigation }) {
     const [selectedDate, setSelectedDate] = useState();
@@ -14,31 +16,44 @@ export default function DateSelectionScreen({ navigation }) {
 
     const [avaliableTimesData, setAvaliableTimesData] = useState(['12:30', '14:00', '15:30', '16:00', '17:00']);
 
+    const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(false);
+
     return (
-        <Container>
-            <Title>Selecionar data</Title>
-
-            <FullCalender 
-                selectedDate={selectedDate}
-                handleSelectedDateFn={setSelectedDate}
+        <Host>
+            <ScheduleBriefModal 
+                active={isScheduleBriefActive}
+                disableModalFn={() => setIsScheduleBriefActive(false)}
+                confirmModalFn={() => {
+                    setIsScheduleBriefActive(false);
+                    navigation.navigate('Main');
+                }}
             />
+            <Container>
+                <Title>Selecionar data</Title>
 
-            <SelectInput 
-                labelText='Selecione um horário disponível'
-                defaultText='Selecionar horário'
-                handleSelectedFn={setSelectedTime}
-                data={avaliableTimesData}
-            />
+                <FullCalender 
+                    selectedDate={selectedDate}
+                    handleSelectedDateFn={setSelectedDate}
+                />
 
-            <ButtonLinkWrapper>
-                <UnsignedButton 
-                    buttonText='Confirmar'
-                    handleClickFn={() => navigation.navigate('patientConsult', { openScheduleBrief: true })}
+                <SelectInput 
+                    labelText='Selecione um horário disponível'
+                    defaultText='Selecionar horário'
+                    handleSelectedFn={setSelectedTime}
+                    data={avaliableTimesData}
                 />
-                <UnsignedLink 
-                    linkText='Cancelar'
-                />
-            </ButtonLinkWrapper>
-        </Container>
+
+                <ButtonLinkWrapper>
+                    <UnsignedButton 
+                        buttonText='Confirmar'
+                        handleClickFn={() => setIsScheduleBriefActive(true)}
+                    />
+                    <UnsignedLink 
+                        linkText='Cancelar'
+                        handleClickFn={() => navigation.navigate('Main')}
+                    />
+                </ButtonLinkWrapper>
+            </Container>
+        </Host>
     )
 }

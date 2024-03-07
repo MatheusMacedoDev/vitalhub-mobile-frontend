@@ -11,7 +11,9 @@ export const Header = styled(LinearGradient)`
     justify-content: space-between;
 `;
 
-export const UserContainer = styled.View`
+export const UserContainer = styled.TouchableOpacity.attrs({
+    activeOpacity: 1
+})`
     flex-direction: row;
     gap: 10px;
     align-items: center;

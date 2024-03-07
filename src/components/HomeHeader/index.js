@@ -2,14 +2,14 @@ import React from 'react';
 import { Header, NameText, UserContainer, UserImage, UserInfoContainer, WelcomeText } from './style';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function HomeHeader({ userName, userImageUri}) {
+export default function HomeHeader({ userName, userImageUri, navigation}) {
   return (
     <Header
         colors={['#60BFC5', '#496BBA']}
         start={{x: -0.05, y: 1.08}}
         end={{x: 1, y: 0}}
     >
-        <UserContainer>
+        <UserContainer onPress={() => navigation.navigate('PatientProfile')}>
             <UserImage 
                 source={{ uri: userImageUri }}
             />

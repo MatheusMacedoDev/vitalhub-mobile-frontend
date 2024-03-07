@@ -5,13 +5,11 @@ import InternalTextArea from '../../components/InternalTextArea';
 import { InternalInputsWrapper } from '../../components/InternalInput/style';
 import { SplitedTextAreasContainer } from '../../components/InternalTextArea/style';
 import Map from '../../components/Map';
+import UnsignedLink from '../../components/UnsignedLink';
 
-export default function ConsultationLocationScreen() {
+export default function ConsultationLocationScreen({ navigation }) {
   return (
     <>
-        {/*<MapImage 
-            source={require('../../assets/map-image.png')}
-        />*/}
         <Map />
         <LocationContainer>
             <Title marginTop={10}>Clínica Natureh</Title>
@@ -34,6 +32,10 @@ export default function ConsultationLocationScreen() {
                         textArea='Moema-SP'
                     />
                 </SplitedTextAreasContainer>
+                <UnsignedLink 
+                    linkText='Cancelar'
+                    handleClickFn={() => navigation.replace('Main')}
+                />
             </InternalInputsWrapper>
         </LocationContainer>
     </>

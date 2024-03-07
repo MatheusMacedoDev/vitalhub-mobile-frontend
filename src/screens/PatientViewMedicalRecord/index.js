@@ -9,7 +9,7 @@ import MedicalExams from '../../components/MedicalExams';
 import UnsignedLink from '../../components/UnsignedLink';
 import { ScrollContainer } from '../../components/ScrollContainer/style';
 
-export default function PatientViewMedicalRecord() {
+export default function PatientViewMedicalRecord({ navigation }) {
   return (
     <ScrollContainer>
         <UserProfileImage 
@@ -46,6 +46,7 @@ export default function PatientViewMedicalRecord() {
 
             <UnsignedLink 
                 linkText='Voltar'
+                handleClickFn={() => navigation.navigate('Main')}
             />
         </Container>
     </ScrollContainer>

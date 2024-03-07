@@ -97,6 +97,7 @@ export default function DoctorSelectionScreen({ navigation }) {
         />
         <UnsignedLink 
           linkText='Cancelar'
+          handleClickFn={() => navigation.navigate('Main')}
         />
       </ButtonLinkWrapper>
     </Container>

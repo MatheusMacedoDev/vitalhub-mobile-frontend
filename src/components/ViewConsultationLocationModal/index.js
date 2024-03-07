@@ -13,7 +13,8 @@ export default function ViewConsultationLocationModal({
         doctorName: '',
         doctorSpecialty: '',
         doctorCRM: ''
-    }
+    },
+    navigation
 }) {
     return (
         <Modal active={active} modalHeighPercentage={60}>
@@ -30,6 +31,7 @@ export default function ViewConsultationLocationModal({
             />
             <UnsignedButton 
                 buttonText='Ver local da consulta'
+                handleClickFn={() => navigation.navigate('consultationLocation')}
             />
             <UnsignedLink 
                 linkText='Cancelar'

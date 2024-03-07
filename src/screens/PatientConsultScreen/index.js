@@ -10,15 +10,13 @@ import CancelConsultationModal from '../../components/CancelConsultationModal';
 import { ScheduleConsultationButton } from './style';
 import { FontAwesome6 } from '@expo/vector-icons';
 import ScheduleConsultationModal from '../../components/ScheduleConsultationModal';
-import ScheduleBriefModal from '../../components/ScheduleBriefModal';
 import ViewConsultationLocationModal from '../../components/ViewConsultationLocationModal';
+import { Host } from 'react-native-portalize';
 
 export default function PatientConsultScreen({ navigation, route }) {
   const [isCancelConsultationModalActive, setIsCancelConsultationModalActive] = useState(false);
 
   const [isSchedulingConsultationActive, setIsSchedulingConsultationActive] = useState(false);
-
-  const [isScheduleBriefActive, setIsScheduleBriefActive] = useState(canOpenScheduleBrief());
 
   const [isViewConsultationLocationActive, setIsViewConsultationLocationActive] = useState(false);
   const [currentConsultationData, setCurrentConsultationData] = useState({});
@@ -49,15 +47,6 @@ export default function PatientConsultScreen({ navigation, route }) {
       consultationStatus: 'performed'
     },
   ]);
-
-  function canOpenScheduleBrief() {
-    try {
-      const { openScheduleBrief } = route.params;
-      return openScheduleBrief;
-    } catch(err) {
-      return false;
-    }
-  }
 
   function filterConsultationsByStatus() {
     const isScheduledConsultation = consultation => consultation.consultationStatus == 'scheduled';
@@ -97,10 +86,6 @@ export default function PatientConsultScreen({ navigation, route }) {
         disableModalFn={() => setIsSchedulingConsultationActive(false)}
         navigation={navigation}
       />
-      <ScheduleBriefModal 
-        active={isScheduleBriefActive}
-        disableModalFn={() => setIsScheduleBriefActive(false)}
-      />
       <ViewConsultationLocationModal 
         active={isViewConsultationLocationActive}
         disableModalFn={() => setIsViewConsultationLocationActive(false)}
@@ -109,9 +94,10 @@ export default function PatientConsultScreen({ navigation, route }) {
           doctorSpecialty: currentConsultationData.selectedDoctorSpecialty,
           doctorCRM: currentConsultationData.doctorCRM
          }}
+         navigation={navigation}
       />
       <ScreenContainer>
-          <HomeHeader userName='Richard Kosta' userImageUri='https://avatars.githubusercontent.com/u/125266412?v=4' />
+          <HomeHeader navigation={navigation} userName='Richard Kosta' userImageUri='https://avatars.githubusercontent.com/u/125266412?v=4' />
           <Calendar />
           <Container>
               <ConsultationBar 
@@ -131,10 +117,15 @@ export default function PatientConsultScreen({ navigation, route }) {
                     consultationTime={item.consultationTime}
                     cardType={item.consultationStatus}
                     activeCancelingModalFn={() => setIsCancelConsultationModalActive(true)}
+                    activeInsertMedicalRecordModalFn={() => navigation.navigate('patientViewMedicalRecord')}
+                    setCurrentUserDataFn={() => {}}
                     handleCardClick={() => {
                       setCurrentConsultationData(item);
-                      setIsViewConsultationLocationActive(true);
+                      if (item.consultationStatus === 'scheduled') {
+                        setIsViewConsultationLocationActive(true);
+                      }
                     }}
+                    navigatiton={navigation}
                   />
                 }
               />
