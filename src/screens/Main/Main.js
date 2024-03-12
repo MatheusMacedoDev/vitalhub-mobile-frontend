@@ -14,7 +14,7 @@ import { useState } from 'react';
 const BottomTab = createBottomTabNavigator();
 
 export const Main = ({ route }) => {
-    const [userType, setUserType] = useState('doctor');
+    const [userType, setUserType] = useState('patient');
 
     return (
         <Host>
