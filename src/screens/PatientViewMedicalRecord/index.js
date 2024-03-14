@@ -42,7 +42,9 @@ export default function PatientViewMedicalRecord({ navigation }) {
                 />
             </InternalInputsWrapper>
 
-            <MedicalExams />
+            <MedicalExams
+                handleSendClick={() => navigation.navigate('Camera')}
+            />
 
             <UnsignedLink 
                 linkText='Voltar'

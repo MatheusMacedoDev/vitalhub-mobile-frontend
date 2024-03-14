@@ -32,6 +32,7 @@ import DateSelectionScreen from './src/screens/DateSelectionScreen';
 import ConsultationLocationScreen from './src/screens/ConsultationLocationScreen';
 import PatientViewMedicalRecord from './src/screens/PatientViewMedicalRecord';
 import { Main } from './src/screens/Main/Main';
+import CameraScreen from './src/screens/CameraScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -130,6 +131,11 @@ export default function App() {
                     name='patientViewMedicalRecord'
                     component={PatientViewMedicalRecord}
                     options={{ title: 'PatientViewMedicalRecord' }}
+                />
+                <Stack.Screen
+                    name='Camera'
+                    component={CameraScreen}
+                    options={{ title: 'Camera' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

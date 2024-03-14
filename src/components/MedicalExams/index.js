@@ -5,7 +5,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import InternalTextArea from '../InternalTextArea';
 
-export default function MedicalExams() {
+export default function MedicalExams({ handleSendClick }) {
   return (
     <MedicalExamsContainer>
         <InputLabel fontSize={16}>Exames médicos</InputLabel>
@@ -16,7 +16,7 @@ export default function MedicalExams() {
         <ButtonsWrapper>
             <SendButtonContainer>
                 <MaterialCommunityIcons name="camera-plus-outline" size={22} color="white" />
-                <SendButtonText>Enviar</SendButtonText>
+                <SendButtonText onPress={handleSendClick}>Enviar</SendButtonText>
             </SendButtonContainer>
             <CancelationContainer>
                 <CancelationLink>Cancelar</CancelationLink>

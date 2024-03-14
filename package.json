@@ -29,7 +29,9 @@
     "react-native-portalize": "^1.0.7",
     "react-native-select-dropdown": "^3.4.0",
     "styled-components": "^6.1.8",
-    "expo-location": "~16.5.5"
+    "expo-location": "~16.5.5",
+    "expo-media-library": "~15.9.1",
+    "expo-camera": "~14.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
