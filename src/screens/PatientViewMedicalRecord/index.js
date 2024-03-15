@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from '../../components/Container/style';
 import UserMainInfo from '../../components/UserMainInfo';
 import { InternalInputsWrapper } from '../../components/InternalInput/style';
@@ -8,8 +8,24 @@ import { UserProfileImage } from './style';
 import MedicalExams from '../../components/MedicalExams';
 import UnsignedLink from '../../components/UnsignedLink';
 import { ScrollContainer } from '../../components/ScrollContainer/style';
+import { Camera } from 'expo-camera';
+import * as MediaLibrary from 'expo-media-library';
 
-export default function PatientViewMedicalRecord({ navigation }) {
+export default function PatientViewMedicalRecord({ navigation, route }) {
+    const [photosUri, setPhotosUri] = useState([]);
+    const { newPhotoUri } = route.params;
+
+    useEffect(() => {
+        if (newPhotoUri != '') {
+            setPhotosUri(
+                [
+                    ...photosUri,
+                    newPhotoUri
+                ]
+            )
+        }
+    }, [newPhotoUri]);
+
   return (
     <ScrollContainer>
         <UserProfileImage 
@@ -43,7 +59,12 @@ export default function PatientViewMedicalRecord({ navigation }) {
             </InternalInputsWrapper>
 
             <MedicalExams
-                handleSendClick={() => navigation.navigate('Camera')}
+                handleSendClick={async () => {
+                    await Camera.requestCameraPermissionsAsync();
+                    await MediaLibrary.requestPermissionsAsync();
+                    navigation.navigate('Camera')
+                }}
+                photosUri={photosUri}
             />
 
             <UnsignedLink 

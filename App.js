@@ -131,6 +131,7 @@ export default function App() {
                     name='patientViewMedicalRecord'
                     component={PatientViewMedicalRecord}
                     options={{ title: 'PatientViewMedicalRecord' }}
+                    initialParams={{ newPhotoUri: '' }}
                 />
                 <Stack.Screen
                     name='Camera'

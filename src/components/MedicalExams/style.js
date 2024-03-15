@@ -16,6 +16,12 @@ export const ExamPhotosContainer = styled.View`
     gap: 10px;
 `;
 
+export const ExamPhoto = styled.Image`
+    width: 20%;
+    height: 80%;
+    border-radius: 10px;
+`;
+
 export const NoPhotoText = styled.Text`
     font-family: 'MontserratAlternates_500Medium';
     font-size: 14px;
