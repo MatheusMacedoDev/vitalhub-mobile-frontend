@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react';
 import { Container } from '../../components/Container/style';
 import UserMainInfo from '../../components/UserMainInfo';

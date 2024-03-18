@@ -34,7 +34,18 @@ import PatientViewMedicalRecord from './src/screens/PatientViewMedicalRecord';
 import { Main } from './src/screens/Main/Main';
 import CameraScreen from './src/screens/CameraScreen';
 
+import * as Notifications from 'expo-notifications';
+
 const Stack = createNativeStackNavigator();
+
+Notifications.requestPermissionsAsync();
+Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: true
+    })
+})
 
 export default function App() {
     useFonts({

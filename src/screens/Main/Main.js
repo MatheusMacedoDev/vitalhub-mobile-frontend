@@ -9,12 +9,21 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { ContentIcon, TextIcon } from './style';
 
 import { Host } from 'react-native-portalize'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { PatientCancelNotify } from '../../../utils/notifications';
 
 const BottomTab = createBottomTabNavigator();
 
 export const Main = ({ route }) => {
     const [userType, setUserType] = useState('patient');
+
+    async function notify () {
+        PatientCancelNotify('Matheus Macedo', 'Ortopedia', '23/04/2024', '18:00');
+    }
+
+    useEffect(() => {
+        notify();
+    }, []);
 
     return (
         <Host>
